@@ -100,9 +100,9 @@ const Header = () => {
                     <Link className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === '/shop' ? 'bg-red-400 text-white' : ''}`}
                         href={'/shop'}>Shop</Link>
                     <Link className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === '/about' ? 'bg-red-400 text-white' : ''}`}
-                        href={'/about'}>About</Link>
+                        href={'/about'}>About Us</Link>
                     <Link className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === '/contact' ? 'bg-red-400 text-white' : ''}`}
-                        href={'/contact'}>Contact</Link>
+                        href={'/contact'}>Contact Us</Link>
                     <li className='p-2 hover:bg-red-400 hover:text-white'>
                         <select id="languages" class="bg-transparent outline-none">
                             <option className='bg-white text-black hover:bg-gray-400' value="ENG">ENG</option>
@@ -148,25 +148,25 @@ const Header = () => {
                 </div>
             </div>
             <div ref={navBarRef} className="lower-nav w-full text-lg">
-                <div className="container mx-auto py-3 px-3 md:px-0">
-                    <div className="grid grid-cols-3 items-center">
-                        <button onClick={openBar} className='md:hidden w-fit text-3xl'><i class="fa-solid fa-bars-staggered"></i></button>
-                        <ul className="nav-menu uppercase hidden md:flex">
+                <div className="container mx-auto py-6 px-3">
+                    <div className="flex items-center">
+                        <button onClick={openBar} className='md:hidden me-6 flex justify-start w-fit text-3xl'><i class="fa-solid fa-bars-staggered"></i></button>
+                        <div className="logo "><Link href={'/'}><Image src={logoUrl} alt="FootShop Logo" width={100} /></Link></div>
+                        <ul className="nav-menu text-2xl grow hidden md:flex justify-center">
                             <li>
-                                <Link className={`pe-3 hover:text-red-400 transition-transform ${router.pathname === '/home' ? 'text-red-400' : ''}`} href={'/home'}>Home</Link>
+                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/home' ? 'text-red-400' : ''}`} href={'/home'}>Home</Link>
                             </li>
                             <li>
-                                <Link className={`pe-3 hover:text-red-400 transition-transform ${router.pathname === '/shop' ? 'text-red-400' : ''}`} href={'/shop'}>Shop</Link>
+                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/shop' ? 'text-red-400' : ''}`} href={'/shop'}>Shop</Link>
                             </li>
                             <li>
-                                <Link className={`pe-3 hover:text-red-400 transition-transform ${router.pathname === '/about' ? 'text-red-400' : ''}`} href={'/about'}>About</Link>
+                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/about' ? 'text-red-400' : ''}`} href={'/about'}>About Us</Link>
                             </li>
                             <li>
-                                <Link className={`pe-3 hover:text-red-400 transition-transform ${router.pathname === '/contact' ? 'text-red-400' : ''}`} href={'/contact'}>Contact</Link>
+                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/contact' ? 'text-red-400' : ''}`} href={'/contact'}>Contact Us</Link>
                             </li>
                         </ul>
-                        <div className="logo flex justify-center"><Link href={'/'}><Image src={logoUrl} alt="FootShop Logo" width={100} /></Link></div>
-                        <div className="right-box">
+                        <div className="right-box grow md:grow-0 md:w-fit flex justify-end">
                             <ul className='flex justify-end'>
                                 <li onClick={openSearch} className='pe-3 hidden md:block'>
                                     <button><i class="fa-solid fa-magnifying-glass"></i></button>

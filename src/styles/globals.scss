@@ -85,3 +85,26 @@ html{
     transform: translateY(-100%);
   }
 }
+
+.banner{
+  background-image: url('../images/static/banner-bg.jpg');
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  font-weight: 700;
+}
+
+
+.slick-slide{
+  opacity: 0.3;
+  filter: grayscale(1);
+  &.slick-center{
+    opacity: 1 ;
+    filter: grayscale(0) ;
+  }
+}

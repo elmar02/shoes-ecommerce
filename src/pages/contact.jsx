@@ -1,9 +1,12 @@
 import React from 'react'
 import Layout from '../../layout/Layout'
+import Banner from '@/components/Banner'
 
 const contact = () => {
   return (
-    <Layout>contact</Layout>
+    <Layout title='Contact Us'>
+      <Banner title={'Contact Us'}/>
+    </Layout>
   )
 }
 
