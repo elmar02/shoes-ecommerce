@@ -1,7 +1,13 @@
 import React from 'react'
+import BtLink from './BtLink'
 const Banner = ({title}) => {
   return (
-    <div className='banner w-full text-center'><h1>{title}</h1></div>
+    <div className='banner w-full text-center'>
+      <h1>{title}</h1>
+      {
+        title==='404 | Opps, page not found' ? <BtLink to={'/home'} title={'Go Home'} /> : <></>
+      }
+    </div>
   )
 }
 

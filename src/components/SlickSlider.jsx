@@ -18,13 +18,16 @@ const SlickSlider = () => {
             {
                 breakpoint: 640,
                 settings: {
-                    variableWidth: false
+                    variableWidth: false,
+                    autoplay: true,
+                    autoplaySpeed: 3000,
+                    cssEase: "linear"
                 }
             }
         ]
     };
     return (
-        <div className='pb-12'>
+        <div className='slickSlider pb-12'>
             <Slider {...settings}>
                 <Slide />
                 <Slide />

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -44,19 +44,21 @@ html{
   }
 }
 
-.lower-nav{
-  &.fixed-header{
+.lower-nav {
+  &.fixed-header {
     background-color: white;
     z-index: 10;
     position: fixed;
     top: 0;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px;
   }
-  .right-box{
-    a{
+
+  .right-box {
+    a {
       position: relative;
       font-size: 1.1em;
-      .box{
+
+      .box {
         position: absolute;
         height: fit-content;
         top: -10px;
@@ -70,6 +72,7 @@ html{
 .mobile-side-bar {
   transition: transform 0.5s ease;
   transform: translateX(0);
+
   &.collapsed {
     transform: translateX(-100%);
   }
@@ -79,14 +82,15 @@ html{
 
 
 
-.searched-box{
+.searched-box {
   transition: transform 0.5s ease;
-  &.collapsed{
+
+  &.collapsed {
     transform: translateY(-100%);
   }
 }
 
-.banner{
+.banner {
   background-image: url('../images/static/banner-bg.jpg');
   height: 200px;
   background-repeat: no-repeat;
@@ -95,16 +99,35 @@ html{
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.5em;
-  font-weight: 700;
+  flex-direction: column;
+  h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+  }
 }
 
 
-.slick-slide{
-  opacity: 0.3;
-  filter: grayscale(1);
-  &.slick-center{
-    opacity: 1 ;
-    filter: grayscale(0) ;
+.slickSlider{
+  .slick-slide {
+    opacity: 0.3;
+    filter: grayscale(1);
+  
+    &.slick-center {
+      opacity: 1;
+      filter: grayscale(0);
+    }
+  }
+}
+
+.workers{
+  .image-box{
+    &:hover{
+      .image,.text-box{
+        opacity: 20%;
+      }
+      .socials{
+        display: block;
+      }
+    }
   }
 }

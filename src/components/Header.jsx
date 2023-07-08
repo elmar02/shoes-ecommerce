@@ -85,7 +85,7 @@ const Header = () => {
     const router = useRouter()
     return (
         <header>
-            <button onClick={up} ref={upRef} className='fixed hidden w-9 h-9 justify-center items-center rounded-full bg-red-400 text-white bottom-10 right-10'><i class="fa-solid fa-chevron-up"></i></button>
+            <button onClick={up} ref={upRef} className='fixed z-10 hidden w-9 h-9 justify-center items-center rounded-full bg-red-400 text-white bottom-10 right-10'><i class="fa-solid fa-chevron-up"></i></button>
             <div ref={barRef} className="mobile-side-bar collapsed md:hidden fixed left-0 w-72 top-0 bottom-0 bg-white z-50 p-1">
                 <div className='flex items-center mt-1 mb-2'>
                     <form action="submit" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
