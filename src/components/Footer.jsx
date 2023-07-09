@@ -1,15 +1,18 @@
-import React from 'react'
-import logoUrl from '@/images/static/logo.png'
+import React, { useEffect, useState } from 'react'
+import darkLogo from '@/images/static/logo-dark.png'
+import lightLogo from '@/images/static/logo-light.png'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useSelector } from 'react-redux'
 
 const Footer = () => {
+  const isDark = useSelector((state)=>state.theme.theme.isDark)
   return (
-    <footer className="bg-slate-50">
+    <footer className="bg-slate-50 dark:bg-slate-900 dark:text-white">
       <div className="container mx-auto px-4 py-8">
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <li>
-            <div className="logo mb-4"><Link href={'/'}><Image src={logoUrl} alt="FootShop Logo" width={100} /></Link></div>
+            <div className="logo mb-4"><Link href={'/'}><Image src={isDark?darkLogo:lightLogo} alt="FootShop Logo" width={100} /></Link></div>
             <p className="text-sm">Step into Style and Comfort with Elessi!</p>
             <ul className="mt-4 space-y-2">
               <li><Link href={"/shop"} className="hover:text-red-400 transition-colors">Shop Now</Link></li>
@@ -56,7 +59,7 @@ const Footer = () => {
           </li>
         </ul>
       </div>
-      <div className="bg-white py-4">
+      <div className="bg-white py-4 dark:bg-gray-900">
         <div className="container mx-auto px-4 text-center text-sm">
           &copy; {new Date().getFullYear()} Company Name. All rights reserved.
         </div>

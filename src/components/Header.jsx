@@ -1,8 +1,12 @@
-import React, { useEffect, useRef } from 'react'
-import logoUrl from '@/images/static/logo.png'
+import React, { useEffect, useRef, useState } from 'react'
+import darkLogo from '@/images/static/logo-dark.png'
+import lightLogo from '@/images/static/logo-light.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useDispatch, useSelector } from 'react-redux'
+import { setTheme } from '@/redux/slices/themeSlice'
+
 const Header = () => {
     const barRef = useRef(null);
     const layoutRef = useRef(null);
@@ -10,6 +14,38 @@ const Header = () => {
     const navBarRef = useRef(null);
     const upRef = useRef(null);
     const searchRef = useRef(null);
+    const router = useRouter()
+    const checkboxRef = useRef(null);
+    const isDark = useSelector((state)=>state.theme.theme.isDark)
+    const dispatch = useDispatch();
+    const checkMode = ()=>{
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+            checkboxRef.current.checked = false;
+            localStorage.setItem('theme','dark');
+            dispatch(setTheme(true))
+        } else {
+            document.documentElement.classList.remove('dark')
+            checkboxRef.current.checked = true;
+            localStorage.setItem('theme','light');
+            dispatch(setTheme(false))
+        }
+    }
+
+    const changeTheme = (e)=>{
+        if(e.target.checked){
+            localStorage.setItem('theme','light');
+        }
+        else{
+            localStorage.setItem('theme','dark');
+        }
+        checkMode();
+    }
+
+    useEffect(() => {
+        checkMode();
+    }, []);
+
     const closeBar = () => {
         if (barRef.current) {
             barRef.current.classList.add("collapsed");
@@ -82,7 +118,6 @@ const Header = () => {
             window.removeEventListener("scroll", closeSearch);
         };
     }, []);
-    const router = useRouter()
     return (
         <header>
             <button onClick={up} ref={upRef} className='fixed z-10 hidden w-9 h-9 justify-center items-center rounded-full bg-red-400 text-white bottom-10 right-10'><i class="fa-solid fa-chevron-up"></i></button>
@@ -147,11 +182,11 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div ref={navBarRef} className="lower-nav w-full text-lg">
+            <div ref={navBarRef} className="lower-nav w-full text-lg dark:text-white dark:bg-gray-900">
                 <div className="container mx-auto py-6 px-3">
                     <div className="flex items-center">
                         <button onClick={openBar} className='md:hidden me-6 flex justify-start w-fit text-3xl'><i class="fa-solid fa-bars-staggered"></i></button>
-                        <div className="logo "><Link href={'/'}><Image src={logoUrl} alt="FootShop Logo" width={100} /></Link></div>
+                        <div className="logo "><Link href={'/'}><Image src={isDark?darkLogo:lightLogo} alt="FootShop Logo" width={100} /></Link></div>
                         <ul className="nav-menu text-2xl grow hidden md:flex justify-center">
                             <li>
                                 <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/home' ? 'text-red-400' : ''}`} href={'/home'}>Home</Link>
@@ -183,8 +218,8 @@ const Header = () => {
                                         <div className='box bg-red-400 text-white px-2 rounded-full'>0</div>
                                     </Link>
                                 </li>
-                                <li className='relative ps-2'>
-                                    <input type="checkbox" class="checkbox checked:checkbox-label" id="checkbox" defaultChecked={true} />
+                                <li className='themeToggle relative ps-2'>
+                                    <input ref={checkboxRef} onChange={changeTheme} type="checkbox" class="checkbox checked:checkbox-label" id="checkbox" />
                                     <label for="checkbox" class="checkbox-label">
                                         <i class="fas fa-sun text-yellow-300"></i>
                                         <i class="fas fa-moon text-yellow-300"></i>
