@@ -1,5 +1,4 @@
 import { Inter } from 'next/font/google'
-import Layout from '../../layout/Layout'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 

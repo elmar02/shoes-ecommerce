@@ -8,6 +8,11 @@ html {
     .banner{
       background-image: url("../images/static/banner-bg-dark.jpg");
     }
+    .lower-nav{
+      &.fixed-header{
+        box-shadow: rgba(98, 89, 89, 0.3) 0px 0px 6px;
+      }
+    }
   }
 }
 

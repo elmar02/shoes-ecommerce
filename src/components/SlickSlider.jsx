@@ -16,7 +16,7 @@ const SlickSlider = () => {
         variableWidth: true,
         responsive: [
             {
-                breakpoint: 640,
+                breakpoint: 819,
                 settings: {
                     variableWidth: false,
                     autoplay: true,

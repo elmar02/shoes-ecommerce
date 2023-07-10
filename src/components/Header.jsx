@@ -7,6 +7,7 @@ import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheme } from '@/redux/slices/themeSlice'
 import { setLanguage } from '@/redux/slices/languageSlice'
+import { setCurrency } from '@/redux/slices/currencySlice'
 
 const Header = () => {
     // useRouter
@@ -138,17 +139,43 @@ const Header = () => {
     }
     const changeLang = (e) => {
         const language = e.target.value
-
         setCurrentLang(language)
         localStorage.setItem('lang', language);
         dispatch(setLanguage(language))
-        console.log(selectedLanguage);
+    }
+
+    // currency mode
+    const [currentCurrency,setCurrentCurrency] = useState('USD')
+    const checkCurrency = () => {
+        const fromLocal = localStorage.getItem('currency')
+        if (fromLocal==='USD' || (!fromLocal && navigator.language.includes('en'))) {
+            localStorage.setItem('currency','USD');
+            dispatch(setCurrency('USD'))
+            setCurrentCurrency('USD')
+        }
+        else if (fromLocal==='AZN' || (!fromLocal && navigator.language.includes('az'))) {
+            localStorage.setItem('currency','AZN');
+            dispatch(setCurrency('AZN'))
+            setCurrentCurrency('AZN')
+        }
+        else {
+            localStorage.setItem('currency','TRY');
+            dispatch(setCurrency('TRY'))
+            setCurrentCurrency('TRY')
+        }
+    }
+    const changeCurrency = (e) => {
+        const currency = e.target.value
+        setCurrentCurrency(currency)
+        localStorage.setItem('currency', currency);
+        dispatch(setCurrency(currency))
     }
 
     useEffect(() => {
         fixedHeader();
         checkMode();
         checkLang();
+        checkCurrency();
         window.addEventListener("scroll", closeBar);
         window.addEventListener("scroll", closeSearch);
         return () => {
@@ -187,7 +214,7 @@ const Header = () => {
                         </select>
                     </li>
                     <li className='p-2 hover:bg-red-400 hover:text-white '>
-                        <select id="currencies" class="bg-transparent outline-none">
+                        <select value={currentCurrency} onChange={changeCurrency} id="currencies" class="bg-transparent outline-none">
                             <option className='bg-white text-black hover:bg-gray-400' value="USD">USD</option>
                             <option className='bg-white text-black hover:bg-gray-400' value="AZN">AZN</option>
                             <option className='bg-white text-black hover:bg-gray-400' value="TRY">TRY</option>
@@ -214,7 +241,7 @@ const Header = () => {
                                 <option className='bg-white text-black hover:bg-gray-400' value="az">AZE</option>
                                 <option className='bg-white text-black hover:bg-gray-400' value="tr">TUR</option>
                             </select>
-                            <select id="currencies" class="bg-transparent outline-none w-fit border-white border-opacity-30 border-s ps-2">
+                            <select value={currentCurrency} onChange={changeCurrency} id="currencies" class="bg-transparent outline-none w-fit border-white border-opacity-30 border-s ps-2">
                                 <option className='bg-white text-black hover:bg-gray-400' value="USD">USD</option>
                                 <option className='bg-white text-black hover:bg-gray-400' value="AZN">AZN</option>
                                 <option className='bg-white text-black hover:bg-gray-400' value="TRY">TRY</option>
