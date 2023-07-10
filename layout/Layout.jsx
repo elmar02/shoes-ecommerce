@@ -6,6 +6,7 @@ const Layout = (props) => {
   useEffect(() => {
     document.title = props.title + ' / Elessi';
   }, [props.title]);
+  
   return (
     <>
     <Header/>

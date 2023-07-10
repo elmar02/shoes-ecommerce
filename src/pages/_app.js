@@ -1,6 +1,7 @@
 import store from '@/redux/store';
 import '@/styles/globals.scss'
-import { Provider } from 'react-redux';
+import { useEffect } from 'react';
+import { Provider, useDispatch } from 'react-redux';
 
 export default function App({ Component, pageProps }) {
   return (

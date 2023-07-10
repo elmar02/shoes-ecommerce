@@ -6,70 +6,15 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
 import { setTheme } from '@/redux/slices/themeSlice'
+import { setLanguage } from '@/redux/slices/languageSlice'
 
 const Header = () => {
+    // useRouter
+    const router = useRouter()
+
+    // open and close side Nav Bar for Mobile
     const barRef = useRef(null);
     const layoutRef = useRef(null);
-    const layoutRef1 = useRef(null);
-    const navBarRef = useRef(null);
-    const upRef = useRef(null);
-    const searchRef = useRef(null);
-    const router = useRouter()
-    const checkboxRef = useRef(null);
-    const isDark = useSelector((state)=>state.theme.theme.isDark)
-    const dispatch = useDispatch();
-    const checkMode = ()=>{
-        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark')
-            checkboxRef.current.checked = false;
-            localStorage.setItem('theme','dark');
-            dispatch(setTheme(true))
-        } else {
-            document.documentElement.classList.remove('dark')
-            checkboxRef.current.checked = true;
-            localStorage.setItem('theme','light');
-            dispatch(setTheme(false))
-        }
-    }
-
-    const changeTheme = (e)=>{
-        if(e.target.checked){
-            localStorage.setItem('theme','light');
-        }
-        else{
-            localStorage.setItem('theme','dark');
-        }
-        checkMode();
-    }
-
-    useEffect(() => {
-        checkMode();
-    }, []);
-
-    const closeBar = () => {
-        if (barRef.current) {
-            barRef.current.classList.add("collapsed");
-        }
-        if (layoutRef.current) {
-            layoutRef.current.classList.add("collapse");
-        }
-    };
-    const closeSearch = () => {
-        if (layoutRef1.current) {
-            layoutRef1.current.classList.add("collapse");
-        }
-        if (searchRef.current) {
-            searchRef.current.classList.add("collapsed");
-        }
-    };
-    const openSearch = () => {
-        if (layoutRef1.current) {
-            layoutRef1.current.classList.remove("collapse");
-        }
-        if (searchRef.current) {
-            searchRef.current.classList.remove("collapsed");
-        }
-    };
     const openBar = () => {
         if (barRef.current) {
             barRef.current.classList.remove("collapsed");
@@ -78,10 +23,18 @@ const Header = () => {
             layoutRef.current.classList.remove("collapse");
         }
     };
-    const up = () => {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
+    const closeBar = () => {
+        if (barRef.current) {
+            barRef.current.classList.add("collapsed");
+        }
+        if (layoutRef.current) {
+            layoutRef.current.classList.add("collapse");
+        }
+    };
+
+    // fixed header and up button
+    const navBarRef = useRef(null);
+    const upRef = useRef(null);
     const fixedHeader = () => {
         window.addEventListener("scroll", function () {
             if (
@@ -106,11 +59,96 @@ const Header = () => {
             }
         });
     };
+    const up = () => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    };
+
+    // open and close search bar
+    const searchRef = useRef(null);
+    const layoutRef1 = useRef(null);
+    const openSearch = () => {
+        if (layoutRef1.current) {
+            layoutRef1.current.classList.remove("collapse");
+        }
+        if (searchRef.current) {
+            searchRef.current.classList.remove("collapsed");
+        }
+    };
+    const closeSearch = () => {
+        if (layoutRef1.current) {
+            layoutRef1.current.classList.add("collapse");
+        }
+        if (searchRef.current) {
+            searchRef.current.classList.add("collapsed");
+        }
+    };
+
+    // dispatch variable for redux slice actions
+    const dispatch = useDispatch();
+
+    // light/dark mode
+    const checkboxRef = useRef();
+    const isDark = useSelector((state) => state.theme.theme.isDark)
+    const checkMode = () => {
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+            checkboxRef.current.checked = false;
+            localStorage.setItem('theme', 'dark');
+            dispatch(setTheme(true))
+        } else {
+            document.documentElement.classList.remove('dark')
+            checkboxRef.current.checked = true;
+            localStorage.setItem('theme', 'light');
+            dispatch(setTheme(false))
+        }
+    };
+    const changeTheme = (e) => {
+
+        if (e.target.checked) {
+            localStorage.setItem('theme', 'light');
+        }
+        else {
+            localStorage.setItem('theme', 'dark');
+        }
+        checkMode();
+    };
+
+    // language mode
+    const [currentLang,setCurrentLang] = useState('en')
+    const selectedLanguage = useSelector((state) => state.language.lang);
+    const languages = useSelector((state) => state.language.languages);
+    const checkLang = () => {
+        const fromLocal = localStorage.getItem('lang')
+        if (fromLocal==='en' || (!fromLocal && navigator.language.includes('en'))) {
+            localStorage.setItem('lang','en');
+            dispatch(setLanguage('en'))
+            setCurrentLang('en')
+        }
+        else if (fromLocal==='az' || (!fromLocal && navigator.language.includes('az'))) {
+            localStorage.setItem('lang','az');
+            dispatch(setLanguage('az'))
+            setCurrentLang('az')
+        }
+        else {
+            localStorage.setItem('lang','tr');
+            dispatch(setLanguage('tr'))
+            setCurrentLang('tr')
+        }
+    }
+    const changeLang = (e) => {
+        const language = e.target.value
+
+        setCurrentLang(language)
+        localStorage.setItem('lang', language);
+        dispatch(setLanguage(language))
+        console.log(selectedLanguage);
+    }
 
     useEffect(() => {
         fixedHeader();
-    }, []);
-    useEffect(() => {
+        checkMode();
+        checkLang();
         window.addEventListener("scroll", closeBar);
         window.addEventListener("scroll", closeSearch);
         return () => {
@@ -118,6 +156,8 @@ const Header = () => {
             window.removeEventListener("scroll", closeSearch);
         };
     }, []);
+
+    const header = languages[selectedLanguage].header
     return (
         <header>
             <button onClick={up} ref={upRef} className='fixed z-10 hidden w-9 h-9 justify-center items-center rounded-full bg-red-400 text-white bottom-10 right-10'><i class="fa-solid fa-chevron-up"></i></button>
@@ -125,24 +165,25 @@ const Header = () => {
                 <div className='flex items-center mt-1 mb-2'>
                     <form action="submit" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
                         <label htmlFor="search"><i class="fa-solid fa-magnifying-glass text-red-400 mx-1"></i></label>
-                        <input id='search' type="text" placeholder='Search' className='outline-none w-full placeholder:text-red-400' />
+                        <input id='search' type="text" placeholder={header.search} className='outline-none w-full placeholder:text-red-400' />
                     </form>
                     <i onClick={closeBar} class="fa-solid fa-xmark mx-2 text-2xl text-red-400 cursor-pointer"></i>
                 </div>
                 <ul className='text-2xl'>
-                    <Link className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === '/home' ? 'bg-red-400 text-white' : ''}`}
-                        href={'/home'}>Home</Link>
-                    <Link className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === '/shop' ? 'bg-red-400 text-white' : ''}`}
-                        href={'/shop'}>Shop</Link>
-                    <Link className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === '/about' ? 'bg-red-400 text-white' : ''}`}
-                        href={'/about'}>About Us</Link>
-                    <Link className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === '/contact' ? 'bg-red-400 text-white' : ''}`}
-                        href={'/contact'}>Contact Us</Link>
+                    {
+                        header.pages.map((page, index) => (
+                            <Link key={index} className={`w-full block p-2 hover:bg-red-400 hover:text-white transition-transform ${router.pathname === page.link ? 'bg-red-400 text-white' : ''}`}
+                                href={page.link}>{page.name}</Link>
+                        ))
+                    }
+                    {
+                        
+                    }
                     <li className='p-2 hover:bg-red-400 hover:text-white'>
-                        <select id="languages" class="bg-transparent outline-none">
-                            <option className='bg-white text-black hover:bg-gray-400' value="ENG">ENG</option>
-                            <option className='bg-white text-black hover:bg-gray-400' value="AZE">AZE</option>
-                            <option className='bg-white text-black hover:bg-gray-400' value="TUR">TUR</option>
+                        <select value={currentLang} onChange={changeLang} id="languages" class="bg-transparent outline-none">
+                            <option className='bg-white text-black hover:bg-gray-400' value="en">ENG</option>
+                            <option className='bg-white text-black hover:bg-gray-400' value="az">AZE</option>
+                            <option className='bg-white text-black hover:bg-gray-400' value="tr">TUR</option>
                         </select>
                     </li>
                     <li className='p-2 hover:bg-red-400 hover:text-white '>
@@ -164,14 +205,14 @@ const Header = () => {
                             <Link className='ms-3' href={'https://www.plus.google.com/'} target='_blank'><i class="fa-brands fa-google-plus-g"></i></Link>
                             <Link className='ms-3' href={'https://www.pinterest.com/'} target='_blank'><i class="fa-brands fa-pinterest"></i></Link>
                             <Link className='ms-3' href={'https://www.instagram.com/'} target='_blank'><i class="fa-brands fa-instagram"></i></Link>
-                            <Link className='ms-3' href={'tel:+994773121173'} target='_blank'>Call: <span className='border-b border-white border-opacity-30'>+994 703121173</span></Link>
+                            <Link className='ms-3' href={'tel:+994773121173'} target='_blank'>{header.call}: <span className='border-b border-white border-opacity-30'>+994 703121173</span></Link>
                         </div>
                         <div className="right-box hidden md:flex">
 
-                            <select id="languages" class="bg-transparent outline-none w-fit me-2">
-                                <option className='bg-white text-black hover:bg-gray-400' value="ENG">ENG</option>
-                                <option className='bg-white text-black hover:bg-gray-400' value="AZE">AZE</option>
-                                <option className='bg-white text-black hover:bg-gray-400' value="TUR">TUR</option>
+                            <select value={currentLang} onChange={changeLang} id="languages" class="bg-transparent outline-none w-fit me-2">
+                                <option className='bg-white text-black hover:bg-gray-400' value="en">ENG</option>
+                                <option className='bg-white text-black hover:bg-gray-400' value="az">AZE</option>
+                                <option className='bg-white text-black hover:bg-gray-400' value="tr">TUR</option>
                             </select>
                             <select id="currencies" class="bg-transparent outline-none w-fit border-white border-opacity-30 border-s ps-2">
                                 <option className='bg-white text-black hover:bg-gray-400' value="USD">USD</option>
@@ -186,20 +227,15 @@ const Header = () => {
                 <div className="container mx-auto py-6 px-3">
                     <div className="flex items-center">
                         <button onClick={openBar} className='md:hidden me-6 flex justify-start w-fit text-3xl'><i class="fa-solid fa-bars-staggered"></i></button>
-                        <div className="logo "><Link href={'/'}><Image src={isDark?darkLogo:lightLogo} alt="FootShop Logo" width={100} /></Link></div>
+                        <div className="logo "><Link href={'/'}><Image src={isDark ? darkLogo : lightLogo} alt="FootShop Logo" width={100} /></Link></div>
                         <ul className="nav-menu text-2xl grow hidden md:flex justify-center">
-                            <li>
-                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/home' ? 'text-red-400' : ''}`} href={'/home'}>Home</Link>
-                            </li>
-                            <li>
-                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/shop' ? 'text-red-400' : ''}`} href={'/shop'}>Shop</Link>
-                            </li>
-                            <li>
-                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/about' ? 'text-red-400' : ''}`} href={'/about'}>About Us</Link>
-                            </li>
-                            <li>
-                                <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === '/contact' ? 'text-red-400' : ''}`} href={'/contact'}>Contact Us</Link>
-                            </li>
+                            {
+                                header.pages.map((page, index) => (
+                                    <li key={index}>
+                                        <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === page.link ? 'text-red-400' : ''}`} href={page.link}>{page.name}</Link>
+                                    </li>
+                                ))
+                            }
                         </ul>
                         <div className="right-box grow md:grow-0 md:w-fit flex justify-end">
                             <ul className='flex justify-end'>
@@ -234,7 +270,7 @@ const Header = () => {
             <div ref={searchRef} className="searched-box collapsed hidden md:flex fixed z-40 bg-white left-0 right-0 top-0 h-1/6 p-3 items-center">
                 <form action="submit" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
                     <label htmlFor="search"><i class="fa-solid fa-magnifying-glass text-red-400 mx-1"></i></label>
-                    <input id='search' type="text" placeholder='Search' className='outline-none w-full placeholder:text-red-400' />
+                    <input id='search' type="text" placeholder={header.search} className='outline-none w-full placeholder:text-red-400' />
                 </form>
                 <i onClick={closeSearch} class="fa-solid fa-xmark mx-2 text-2xl text-red-400 cursor-pointer"></i>
             </div>

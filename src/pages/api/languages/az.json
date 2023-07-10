@@ -1,0 +1,138 @@
+{
+    "header": {
+        "call": "Zəng edin",
+        "search": "Axtarış",
+        "pages": [
+            {
+                "name": "Əsas Səhifə",
+                "link": "/home"
+            },
+            {
+                "name": "Mağaza",
+                "link": "/shop"
+            },
+            {
+                "name": "Haqqımızda",
+                "link": "/about"
+            },
+            {
+                "name": "Bizimlə Əlaqə",
+                "link": "/contact"
+            }
+        ]
+    },
+    "footer": {
+        "pages": [
+            {
+                "name": "İndi Alış-veriş Et",
+                "link": "/shop"
+            },
+            {
+                "name": "Haqqımızda",
+                "link": "/about"
+            },
+            {
+                "name": "Bizimlə Əlaqə",
+                "link": "/contact"
+            },
+            {
+                "name": "Səbətinizi Yoxlayın",
+                "link": "/cart"
+            }
+        ],
+        "desc": "Elessi ilə üslub və rahatlığa adım atın!",
+        "copyrighted": "Elessi. Bütün hüquqlar qorunur.",
+        "columns": [
+            {
+                "title": "Məhsullar",
+                "items": [
+                    {
+                        "text": "Ayaqqabılar",
+                        "href": "/product/shoes"
+                    },
+                    {
+                        "text": "İdman Ayaqqabıları",
+                        "href": "/product/sneakers"
+                    },
+                    {
+                        "text": "Dik-dabanlar",
+                        "href": "/product/highheels"
+                    },
+                    {
+                        "text": "Başmaqlar",
+                        "href": "/product/slippers"
+                    }
+                ]
+            },
+            {
+                "title": "Tərəfdaşlar",
+                "items": [
+                    {
+                        "text": "Adidas",
+                        "href": "https://www.adidas.com/us"
+                    },
+                    {
+                        "text": "Nike",
+                        "href": "https://www.nike.com/"
+                    },
+                    {
+                        "text": "Bvlgari",
+                        "href": "https://www.bulgari.com/"
+                    },
+                    {
+                        "text": "Dolce&Gabbana",
+                        "href": "https://www.dolcegabbana.com/"
+                    }
+                ]
+            },
+            {
+                "title": "Əlaqədə Qalın",
+                "desc": "Sosial mediada bizi izləyin:",
+                "items": [
+                    {
+                        "icon": "fab fa-facebook",
+                        "link": "https://www.facebook.com/"
+                    },
+                    {
+                        "icon": "fab fa-twitter",
+                        "link": "https://www.twitter.com/"
+                    },
+                    {
+                        "icon": "fab fa-instagram",
+                        "link": "https://www.instagram.com/"
+                    },
+                    {
+                        "icon": "fab fa-linkedin",
+                        "link": "https://www.linkedin.com/"
+                    }
+                ]
+            }
+        ]
+    },
+    "home": {
+        "title": "Əsas Səhifə",
+        "slider": [
+            {
+                "title": "Səyahət Ayaqqabıları"
+            }
+        ]
+    },
+    "shop": {
+        "title": "Mağaza"
+    },
+    "cart": {
+        "title": "Səbət"
+    },
+    "about": {
+        "title": "Haqqımızda"
+    },
+    "contact": {
+        "title": "Bizimlə Əlaqə"
+    },
+    "wishlist": {
+        "title": "Seçilmişlər"
+    },
+    "error": {
+        "title": "404 | Xəta, səhifə tapılmadı"
+    }
+}

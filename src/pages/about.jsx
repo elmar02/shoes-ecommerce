@@ -8,6 +8,7 @@ import Banner3 from '@/images/about/banner3.jpg'
 import Icon from '@/images/about/icon.jpg'
 import Image from 'next/image'
 import Slider from 'react-slick'
+import { useSelector } from 'react-redux'
 const about = () => {
   const settings = {
     dots: true,
@@ -17,9 +18,12 @@ const about = () => {
     slidesToScroll: 1,
     arrows:false
   };
+  const selectedLanguage = useSelector((state) => state.language.lang);
+  const languages = useSelector((state) => state.language.languages);
+  const about = languages[selectedLanguage].about;
   return (
-    <Layout title='About Us'>
-      <Banner title={'About Us'} />
+    <Layout title={about.title}>
+      <Banner title={about.title} />
       <section className='py-24 dark:bg-gray-900 dark:text-white'>
         <div className="container mx-auto">
           <h1 className='text-center font-semibold text-5xl mb-7'>Hello! We’re Elessi</h1>

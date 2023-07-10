@@ -1,0 +1,138 @@
+{
+    "header": {
+        "call": "Call",
+        "search": "Search",
+        "pages": [
+            {
+                "name": "Home",
+                "link": "/home"
+            },
+            {
+                "name": "Shop",
+                "link": "/shop"
+            },
+            {
+                "name": "About Us",
+                "link": "/about"
+            },
+            {
+                "name": "Contact Us",
+                "link": "/contact"
+            }
+        ]
+    },
+    "footer": {
+        "pages": [
+            {
+                "name": "Shop Now",
+                "link": "/shop"
+            },
+            {
+                "name": "About Us",
+                "link": "/about"
+            },
+            {
+                "name": "Contact Us",
+                "link": "/contact"
+            },
+            {
+                "name": "Check Your Cart",
+                "link": "/cart"
+            }
+        ],
+        "desc": "Step into Style and Comfort with Elessi!",
+        "copyrighted": "Elessi. All rights reserved.",
+        "columns": [
+            {
+                "title": "Products",
+                "items": [
+                    {
+                        "text": "Shoes",
+                        "href": "/product/shoes"
+                    },
+                    {
+                        "text": "Sneakers",
+                        "href": "/product/sneakers"
+                    },
+                    {
+                        "text": "High-heels",
+                        "href": "/product/highheels"
+                    },
+                    {
+                        "text": "Slippers",
+                        "href": "/product/slippers"
+                    }
+                ]
+            },
+            {
+                "title": "Partners",
+                "items": [
+                    {
+                        "text": "Adidas",
+                        "href": "https://www.adidas.com/us"
+                    },
+                    {
+                        "text": "Nike",
+                        "href": "https://www.nike.com/"
+                    },
+                    {
+                        "text": "Bvlgari",
+                        "href": "https://www.bulgari.com/"
+                    },
+                    {
+                        "text": "Dolce&Gabbana",
+                        "href": "https://www.dolcegabbana.com/"
+                    }
+                ]
+            },
+            {
+                "title": "Stay Connected",
+                "desc": "Follow us on social media:",
+                "items": [
+                    {
+                        "icon": "fab fa-facebook",
+                        "link": "https://www.facebook.com/"
+                    },
+                    {
+                        "icon": "fab fa-twitter",
+                        "link": "https://www.twitter.com/"
+                    },
+                    {
+                        "icon": "fab fa-instagram",
+                        "link": "https://www.instagram.com/"
+                    },
+                    {
+                        "icon": "fab fa-linkedin",
+                        "link": "https://www.linkedin.com/"
+                    }
+                ]
+            }
+        ]
+    },
+    "home": {
+        "title": "Home",
+        "slider": [
+            {
+                "title": "Travel Boots"
+            }
+        ]
+    },
+    "shop": {
+        "title": "Shop"
+    },
+    "cart": {
+        "title": "Cart"
+    },
+    "about": {
+        "title": "About Us"
+    },
+    "contact": {
+        "title": "Contact Us"
+    },
+    "wishlist": {
+        "title": "Wishlist"
+    },
+    "error": {
+        "title": "404 | Opps, page not found"
+    }
+}

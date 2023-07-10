@@ -1,0 +1,138 @@
+{
+    "header": {
+        "call": "Bizi arayın",
+        "search": "Arama",
+        "pages": [
+            {
+                "name": "Ana Sayfa",
+                "link": "/home"
+            },
+            {
+                "name": "Mağaza",
+                "link": "/shop"
+            },
+            {
+                "name": "Hakkımızda",
+                "link": "/about"
+            },
+            {
+                "name": "İletişim",
+                "link": "/contact"
+            }
+        ]
+    },
+    "footer": {
+        "pages": [
+            {
+                "name": "Şimdi Alışveriş Yap",
+                "link": "/shop"
+            },
+            {
+                "name": "Hakkımızda",
+                "link": "/about"
+            },
+            {
+                "name": "İletişim",
+                "link": "/contact"
+            },
+            {
+                "name": "Sepeti Kontrol Et",
+                "link": "/cart"
+            }
+        ],
+        "desc": "Elessi ile Tarz ve Konfora Adım Atın!",
+        "copyrighted": "Elessi. Tüm hakları saklıdır.",
+        "columns": [
+            {
+                "title": "Ürünler",
+                "items": [
+                    {
+                        "text": "Ayakkabılar",
+                        "href": "/product/shoes"
+                    },
+                    {
+                        "text": "Spor Ayakkabıları",
+                        "href": "/product/sneakers"
+                    },
+                    {
+                        "text": "Yüksek Topuklu Ayakkabılar",
+                        "href": "/product/highheels"
+                    },
+                    {
+                        "text": "Terlikler",
+                        "href": "/product/slippers"
+                    }
+                ]
+            },
+            {
+                "title": "Ortaklar",
+                "items": [
+                    {
+                        "text": "Adidas",
+                        "href": "https://www.adidas.com/us"
+                    },
+                    {
+                        "text": "Nike",
+                        "href": "https://www.nike.com/"
+                    },
+                    {
+                        "text": "Bvlgari",
+                        "href": "https://www.bulgari.com/"
+                    },
+                    {
+                        "text": "Dolce&Gabbana",
+                        "href": "https://www.dolcegabbana.com/"
+                    }
+                ]
+            },
+            {
+                "title": "Bağlantıda Kalın",
+                "desc": "Bizi sosyal medyada takip edin:",
+                "items": [
+                    {
+                        "icon": "fab fa-facebook",
+                        "link": "https://www.facebook.com/"
+                    },
+                    {
+                        "icon": "fab fa-twitter",
+                        "link": "https://www.twitter.com/"
+                    },
+                    {
+                        "icon": "fab fa-instagram",
+                        "link": "https://www.instagram.com/"
+                    },
+                    {
+                        "icon": "fab fa-linkedin",
+                        "link": "https://www.linkedin.com/"
+                    }
+                ]
+            }
+        ]
+    },
+    "home": {
+        "title": "Ana Sayfa",
+        "slider": [
+            {
+                "title": "Seyahat Botları"
+            }
+        ]
+    },
+    "shop": {
+        "title": "Mağaza"
+    },
+    "cart": {
+        "title": "Sepet"
+    },
+    "about": {
+        "title": "Hakkımızda"
+    },
+    "contact": {
+        "title": "İletişim"
+    },
+    "wishlist": {
+        "title": "İstek Listesi"
+    },
+    "error": {
+        "title": "404 | Hata, sayfa bulunamadı"
+    }
+}
