@@ -1,4 +1,34 @@
 {
+    "pages": [
+        {
+            "name": "Ana Sayfa",
+            "page_url": "/home"
+        },
+        {
+            "name": "Mağaza",
+            "page_url": "/shop"
+        },
+        {
+            "name": "Hakkımızda",
+            "page_url": "/about"
+        },
+        {
+            "name": "İletişim",
+            "page_url": "/contact"
+        },
+        {
+            "name": "Sepet",
+            "page_url": "/cart"
+        },
+        {
+            "name": "İstek Listesi",
+            "page_url": "/wishlist"
+        },
+        {
+            "name": "404 | Hata, sayfa bulunamadı",
+            "page_url": "/404"
+        }
+    ],
     "header": {
         "call": "Bizi arayın",
         "search": "Arama",

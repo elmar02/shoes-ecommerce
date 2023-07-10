@@ -1,4 +1,34 @@
 {
+    "pages": [
+        {
+            "name": "Əsas Səhifə",
+            "page_url": "/home"
+        },
+        {
+            "name": "Mağaza",
+            "page_url": "/shop"
+        },
+        {
+            "name": "Haqqımızda",
+            "page_url": "/about"
+        },
+        {
+            "name": "Bizimlə Əlaqə",
+            "page_url": "/contact"
+        },
+        {
+            "name": "Səbət",
+            "page_url": "/cart"
+        },
+        {
+            "name": "Seçilmişlər",
+            "page_url": "/wishlist"
+        },
+        {
+            "name": "404 | Xəta, səhifə tapılmadı",
+            "page_url": "/404"
+        }
+    ],
     "header": {
         "call": "Zəng edin",
         "search": "Axtarış",

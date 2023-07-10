@@ -1,4 +1,34 @@
 {
+    "pages": [
+        {
+            "name": "Home",
+            "page_url": "/home"
+        },
+        {
+            "name": "Shop",
+            "page_url": "/shop"
+        },
+        {
+            "name": "About Us",
+            "page_url": "/about"
+        },
+        {
+            "name": "Contact Us",
+            "page_url": "/contact"
+        },
+        {
+            "name": "Cart",
+            "page_url": "/cart"
+        },
+        {
+            "name": "Wishlish",
+            "page_url": "/wishlist"
+        },
+        {
+            "name": "404 | Opps, page not found",
+            "page_url": "/404"
+        }
+    ],
     "header": {
         "call": "Call",
         "search": "Search",
