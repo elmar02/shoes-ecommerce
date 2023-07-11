@@ -170,7 +170,7 @@ const Header = () => {
         localStorage.setItem('currency', currency);
         dispatch(setCurrency(currency))
     }
-
+    
     useEffect(() => {
         fixedHeader();
         checkMode();
@@ -190,9 +190,9 @@ const Header = () => {
             <button onClick={up} ref={upRef} className='fixed z-10 hidden w-9 h-9 justify-center items-center rounded-full bg-red-400 text-white bottom-10 right-10'><i class="fa-solid fa-chevron-up"></i></button>
             <div ref={barRef} className="mobile-side-bar collapsed md:hidden fixed left-0 w-72 top-0 bottom-0 bg-white z-50 p-1">
                 <div className='flex items-center mt-1 mb-2'>
-                    <form action="submit" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
+                    <form action="search" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
                         <label htmlFor="search"><i class="fa-solid fa-magnifying-glass text-red-400 mx-1"></i></label>
-                        <input id='search' type="text" placeholder={header.search} className='outline-none w-full placeholder:text-red-400' />
+                        <input id='search' type="text" name='q' placeholder={header.search} className='outline-none w-full placeholder:text-red-400' />
                     </form>
                     <i onClick={closeBar} class="fa-solid fa-xmark mx-2 text-2xl text-red-400 cursor-pointer"></i>
                 </div>
@@ -224,15 +224,15 @@ const Header = () => {
             </div>
             <div onClick={closeBar} ref={layoutRef} className="layout collapse md:hidden fixed top-0 left-0 right-0 bottom-0 bg-black z-40 opacity-60"></div>
             <div className="upper-nav bg-red-400 text-sm">
-                <div className="container mx-auto py-3 text-white">
+                <div className="container px-5 mx-auto py-3 text-white">
                     <div className="flex justify-center md:justify-between">
                         <div className="contact-box flex items-center">
-                            <Link className='ms-3' href={'https://www.facebook.com/'} target='_blank'><i class="fa-brands fa-facebook-f"></i></Link>
-                            <Link className='ms-3' href={'https://www.twitter.com/'} target='_blank'><i class="fa-brands fa-twitter"></i></Link>
-                            <Link className='ms-3' href={'https://www.plus.google.com/'} target='_blank'><i class="fa-brands fa-google-plus-g"></i></Link>
-                            <Link className='ms-3' href={'https://www.pinterest.com/'} target='_blank'><i class="fa-brands fa-pinterest"></i></Link>
-                            <Link className='ms-3' href={'https://www.instagram.com/'} target='_blank'><i class="fa-brands fa-instagram"></i></Link>
-                            <Link className='ms-3' href={'tel:+994773121173'} target='_blank'>{header.call}: <span className='border-b border-white border-opacity-30'>+994 703121173</span></Link>
+                            <Link className='pe-3' href={'https://www.facebook.com/'} target='_blank'><i class="fa-brands fa-facebook-f"></i></Link>
+                            <Link className='pe-3' href={'https://www.twitter.com/'} target='_blank'><i class="fa-brands fa-twitter"></i></Link>
+                            <Link className='pe-3' href={'https://www.plus.google.com/'} target='_blank'><i class="fa-brands fa-google-plus-g"></i></Link>
+                            <Link className='pe-3' href={'https://www.pinterest.com/'} target='_blank'><i class="fa-brands fa-pinterest"></i></Link>
+                            <Link className='pe-3' href={'https://www.instagram.com/'} target='_blank'><i class="fa-brands fa-instagram"></i></Link>
+                            <Link className='pe-3' href={'tel:+994773121173'} target='_blank'>{header.call}: <span className='border-b border-white border-opacity-30'>+994 703121173</span></Link>
                         </div>
                         <div className="right-box hidden md:flex">
 
@@ -251,15 +251,15 @@ const Header = () => {
                 </div>
             </div>
             <div ref={navBarRef} className="lower-nav w-full text-lg dark:text-white dark:bg-gray-900">
-                <div className="container mx-auto py-6 px-3">
+                <div className="container mx-auto py-6 px-5">
                     <div className="flex items-center">
                         <button onClick={openBar} className='md:hidden me-6 flex justify-start w-fit text-3xl'><i class="fa-solid fa-bars-staggered"></i></button>
-                        <div className="logo "><Link href={'/'}><Image src={isDark ? darkLogo : lightLogo} alt="FootShop Logo" width={100} /></Link></div>
-                        <ul className="nav-menu text-2xl grow hidden md:flex justify-center">
+                        <div className="logo "><Link href={'/'}><Image className='w-110' src={isDark ? darkLogo : lightLogo} alt="FootShop Logo" width={100} /></Link></div>
+                        <ul className="nav-menu md:text-2xl lg:text-3xl grow hidden md:flex justify-center">
                             {
                                 header.pages.map((page, index) => (
                                     <li key={index}>
-                                        <Link className={`pe-5 hover:text-red-400 transition-transform ${router.pathname === page.link ? 'text-red-400' : ''}`} href={page.link}>{page.name}</Link>
+                                        <Link className={`lg:pe-5 pe-3 hover:text-red-400 transition-transform ${router.pathname === page.link ? 'text-red-400' : ''}`} href={page.link}>{page.name}</Link>
                                     </li>
                                 ))
                             }
@@ -295,9 +295,9 @@ const Header = () => {
                 </div>
             </div>
             <div ref={searchRef} className="searched-box collapsed hidden md:flex fixed z-40 bg-white left-0 right-0 top-0 h-1/6 p-3 items-center">
-                <form action="submit" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
+                <form action="search" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
                     <label htmlFor="search"><i class="fa-solid fa-magnifying-glass text-red-400 mx-1"></i></label>
-                    <input id='search' type="text" placeholder={header.search} className='outline-none w-full placeholder:text-red-400' />
+                    <input id='search' type="text" name='q' placeholder={header.search} className='outline-none w-full placeholder:text-red-400' />
                 </form>
                 <i onClick={closeSearch} class="fa-solid fa-xmark mx-2 text-2xl text-red-400 cursor-pointer"></i>
             </div>

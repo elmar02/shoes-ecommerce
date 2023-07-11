@@ -12,7 +12,7 @@ const Footer = () => {
   const footer = languages[selectedLanguage].footer;
   return (
     <footer className="bg-slate-50 dark:bg-slate-900 dark:text-white">
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-5 py-8">
         <ul className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <li>
             <div className="logo mb-4"><Link href={'/'}><Image src={isDark ? darkLogo : lightLogo} alt="FootShop Logo" width={100} /></Link></div>

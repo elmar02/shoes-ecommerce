@@ -27,6 +27,10 @@
         {
             "name": "404 | Opps, page not found",
             "page_url": "/404"
+        },
+        {
+            "name": "number results for 'search'",
+            "page_url": "/search"
         }
     ],
     "header": {

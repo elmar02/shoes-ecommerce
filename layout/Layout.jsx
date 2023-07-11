@@ -6,15 +6,20 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const Layout = (props) => {
+  const router = useRouter()
+  const number = 0
+  const search = router.query.q
   const selectedLanguage = useSelector((state) => state.language.lang);
   const languages = useSelector((state) => state.language.languages);
   const pages = languages[selectedLanguage].pages;
-  const router = useRouter()
+  const searchTitle = languages[selectedLanguage].header.search
   const filteredPages = pages.find(page => page.page_url === router.pathname);
-  const title = filteredPages.name
+  const title = filteredPages.name.replace('search',search).replace('number',number)
   const home = ['Home','Əsas Səhifə','Ana Sayfa']
+  
+
   useEffect(() => {
-    document.title = title + ' / Elessi';
+    document.title = (router.pathname==='/search'? `${searchTitle}: `:'')+ title + ' / Elessi';
   }, [title]);
   
   return (

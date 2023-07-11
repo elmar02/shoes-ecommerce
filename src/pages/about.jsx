@@ -20,7 +20,7 @@ const about = () => {
   return (
     <Layout>
       <section className='py-24 dark:bg-gray-900 dark:text-white'>
-        <div className="container mx-auto">
+        <div className="container px-5 mx-auto">
           <h1 className='text-center font-semibold text-5xl mb-7'>Hello! We’re Elessi</h1>
           <p className='text-center w-3/4 mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacus metus, convallis ut leo nec, tincidunt eleifend justo. Ut felis orci, hendrerit a pulvinar et, gravida ac lorem. Sed vitae molestie sapien, at sollicitudin tortor.
             Duis id volutpat libero, id vestibulum purus.Donec euismod accumsan felis,egestas lobortis velit tempor vitae. Integer eget velit fermentum, dignissim odio non, bibendum velit.</p>

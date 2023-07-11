@@ -27,6 +27,10 @@
         {
             "name": "404 | Hata, sayfa bulunamadı",
             "page_url": "/404"
+        },
+        {
+            "name": "'search' için number sonuç",
+            "page_url": "/search"
         }
     ],
     "header": {

@@ -1,11 +1,11 @@
 import React from 'react'
 import Layout from '../../layout/Layout'
 
-const error = () => {
+const search = () => {
   return (
-    <Layout >
+    <Layout>
     </Layout>
   )
 }
 
-export default error
+export default search

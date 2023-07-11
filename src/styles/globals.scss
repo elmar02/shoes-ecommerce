@@ -4,17 +4,28 @@
 
 html {
   scroll-behavior: smooth;
-  &.dark{
-    .banner{
+
+  &.dark {
+    .banner {
       background-image: url("../images/static/banner-bg-dark.jpg");
     }
-    .lower-nav{
-      &.fixed-header{
+    .google-map{
+      filter: invert(93%);
+    }
+    .lower-nav {
+      &.fixed-header {
         box-shadow: rgba(98, 89, 89, 0.3) 0px 0px 6px;
       }
     }
   }
 }
+
+@media (min-width: 1024px) {
+  .w-110 {
+    width: 110%;
+  }
+}
+
 
 .checkbox {
   opacity: 0;
@@ -102,7 +113,7 @@ html {
 
 .banner {
   background-image: url('../images/static/banner-bg.jpg');
-  
+
   height: 250px;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -111,6 +122,7 @@ html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   h1 {
     font-size: 2.5em;
     font-weight: 700;
@@ -118,11 +130,11 @@ html {
 }
 
 
-.slickSlider{
+.slickSlider {
   .slick-slide {
     opacity: 0.3;
     filter: grayscale(1);
-  
+
     &.slick-center {
       opacity: 1;
       filter: grayscale(0);
@@ -130,13 +142,16 @@ html {
   }
 }
 
-.workers{
-  .image-box{
-    &:hover{
-      .image,.text-box{
+.workers {
+  .image-box {
+    &:hover {
+
+      .image,
+      .text-box {
         opacity: 20%;
       }
-      .socials{
+
+      .socials {
         display: block;
       }
     }

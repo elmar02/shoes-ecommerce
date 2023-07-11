@@ -7,7 +7,7 @@ const store = configureStore({
     reducer: {
         theme: themeSlice,
         language: languageSlice,
-        currency: currencySlice
+        currency: currencySlice,
     }
 })
 
