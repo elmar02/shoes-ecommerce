@@ -25,19 +25,19 @@ const about = () => {
           <p className='text-center w-3/4 mx-auto'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras lacus metus, convallis ut leo nec, tincidunt eleifend justo. Ut felis orci, hendrerit a pulvinar et, gravida ac lorem. Sed vitae molestie sapien, at sollicitudin tortor.
             Duis id volutpat libero, id vestibulum purus.Donec euismod accumsan felis,egestas lobortis velit tempor vitae. Integer eget velit fermentum, dignissim odio non, bibendum velit.</p>
           <div className="socials my-7 flex justify-center text-xl">
-            <Link className='ms-3 p-5 text-white bg-blue-900 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.facebook.com/'} target='_blank'><i class="fa-brands fa-facebook-f"></i></Link>
-            <Link className='ms-3 p-5 text-white bg-blue-400 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.twitter.com/'} target='_blank'><i class="fa-brands fa-twitter"></i></Link>
-            <Link className='ms-3 p-5 text-white bg-red-700 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.plus.google.com/'} target='_blank'><i class="fa-brands fa-google-plus-g"></i></Link>
-            <Link className='ms-3 p-5 text-white bg-red-600 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.pinterest.com/'} target='_blank'><i class="fa-brands fa-pinterest"></i></Link>
-            <Link className='ms-3 p-5 text-white bg-yellow-950 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.instagram.com/'} target='_blank'><i class="fa-brands fa-instagram"></i></Link>
+            <Link className='ms-3 p-5 text-white bg-blue-900 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.facebook.com/'} target='_blank'><i className="fa-brands fa-facebook-f"></i></Link>
+            <Link className='ms-3 p-5 text-white bg-blue-400 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.twitter.com/'} target='_blank'><i className="fa-brands fa-twitter"></i></Link>
+            <Link className='ms-3 p-5 text-white bg-red-700 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.plus.google.com/'} target='_blank'><i className="fa-brands fa-google-plus-g"></i></Link>
+            <Link className='ms-3 p-5 text-white bg-red-600 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.pinterest.com/'} target='_blank'><i className="fa-brands fa-pinterest"></i></Link>
+            <Link className='ms-3 p-5 text-white bg-yellow-950 rounded-full w-8 h-8 flex justify-center items-center' href={'https://www.instagram.com/'} target='_blank'><i className="fa-brands fa-instagram"></i></Link>
           </div>
           <div className="workers my-20 text-center grid grid-cols-1 md:grid-cols-3 gap-5">
             <div className="image-box relative">
               <div className="socials hidden absolute bottom-5 left-1/2 -translate-x-1/2 ">
-                <Link className='me-3' href={'https://www.facebook.com/'} target='_blank'><i class="fa-brands fa-facebook-f"></i></Link>
-                <Link className='me-3' href={'https://www.twitter.com/'} target='_blank'><i class="fa-brands fa-twitter"></i></Link>
-                <Link className='me-3' href={'https://www.dribbble.com/'} target='_blank'><i class="fa-brands fa-dribbble"></i></Link>
-                <Link href={'https://www.behance.net/'} target='_blank'><i class="fa-brands fa-behance"></i></Link>
+                <Link className='me-3' href={'https://www.facebook.com/'} target='_blank'><i className="fa-brands fa-facebook-f"></i></Link>
+                <Link className='me-3' href={'https://www.twitter.com/'} target='_blank'><i className="fa-brands fa-twitter"></i></Link>
+                <Link className='me-3' href={'https://www.dribbble.com/'} target='_blank'><i className="fa-brands fa-dribbble"></i></Link>
+                <Link href={'https://www.behance.net/'} target='_blank'><i className="fa-brands fa-behance"></i></Link>
               </div>
               <div className="image">
                 <Image className='w-full' src={Banner1} />
@@ -49,10 +49,10 @@ const about = () => {
             </div>
             <div className="image-box relative">
               <div className="socials hidden absolute bottom-5 left-1/2 -translate-x-1/2 ">
-                <Link className='me-3' href={'https://www.facebook.com/'} target='_blank'><i class="fa-brands fa-facebook-f"></i></Link>
-                <Link className='me-3' href={'https://www.twitter.com/'} target='_blank'><i class="fa-brands fa-twitter"></i></Link>
-                <Link className='me-3' href={'https://www.dribbble.com/'} target='_blank'><i class="fa-brands fa-dribbble"></i></Link>
-                <Link href={'https://www.behance.net/'} target='_blank'><i class="fa-brands fa-behance"></i></Link>
+                <Link className='me-3' href={'https://www.facebook.com/'} target='_blank'><i className="fa-brands fa-facebook-f"></i></Link>
+                <Link className='me-3' href={'https://www.twitter.com/'} target='_blank'><i className="fa-brands fa-twitter"></i></Link>
+                <Link className='me-3' href={'https://www.dribbble.com/'} target='_blank'><i className="fa-brands fa-dribbble"></i></Link>
+                <Link href={'https://www.behance.net/'} target='_blank'><i className="fa-brands fa-behance"></i></Link>
               </div>
               <div className="image">
                 <Image className='w-full' src={Banner2} />
@@ -64,10 +64,10 @@ const about = () => {
             </div>
             <div className="image-box relative">
               <div className="socials hidden absolute bottom-5 left-1/2 -translate-x-1/2 ">
-                <Link className='me-3' href={'https://www.facebook.com/'} target='_blank'><i class="fa-brands fa-facebook-f"></i></Link>
-                <Link className='me-3' href={'https://www.twitter.com/'} target='_blank'><i class="fa-brands fa-twitter"></i></Link>
-                <Link className='me-3' href={'https://www.dribbble.com/'} target='_blank'><i class="fa-brands fa-dribbble"></i></Link>
-                <Link href={'https://www.behance.net/'} target='_blank'><i class="fa-brands fa-behance"></i></Link>
+                <Link className='me-3' href={'https://www.facebook.com/'} target='_blank'><i className="fa-brands fa-facebook-f"></i></Link>
+                <Link className='me-3' href={'https://www.twitter.com/'} target='_blank'><i className="fa-brands fa-twitter"></i></Link>
+                <Link className='me-3' href={'https://www.dribbble.com/'} target='_blank'><i className="fa-brands fa-dribbble"></i></Link>
+                <Link href={'https://www.behance.net/'} target='_blank'><i className="fa-brands fa-behance"></i></Link>
               </div>
               <div className="image">
                 <Image className='w-full' src={Banner3} />

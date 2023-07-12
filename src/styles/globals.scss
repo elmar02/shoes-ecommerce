@@ -115,13 +115,12 @@ html {
   background-image: url('../images/static/banner-bg.jpg');
 
   height: 250px;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: cover;
+  background-position: top center;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-attachment: fixed;
 
   h1 {
     font-size: 2.5em;
@@ -153,6 +152,20 @@ html {
 
       .socials {
         display: block;
+      }
+    }
+  }
+}
+
+.livechat{
+  transition: transform 0.5s;
+  &.closed{
+  transform: translateY(400px);
+  }
+  .body{
+    .chat-body{
+      &::-webkit-scrollbar {
+        display: none;
       }
     }
   }

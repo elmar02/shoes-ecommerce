@@ -1,6 +1,7 @@
 import Banner from "@/components/Banner";
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
+import LiveChat from "@/components/LiveChat";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
@@ -24,6 +25,7 @@ const Layout = (props) => {
   
   return (
     <>
+    <LiveChat/>
     <Header/>
     {!home.includes(title)? <Banner title={title}/> : <></>}
     <div>{ props.children }</div>
