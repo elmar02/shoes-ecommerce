@@ -7,7 +7,7 @@ const contact = () => {
   return (
     <Layout>
       <section className='py-16 dark:bg-gray-900 dark:text-white'>
-        <div className="contact mx-auto px-5">
+        <div className="container mx-auto px-5">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-6">
             <div className="left-box h-96 md:h-auto"><Map /></div>
             <div className="right-box">

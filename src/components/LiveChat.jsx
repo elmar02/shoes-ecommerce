@@ -20,7 +20,7 @@ const LiveChat = () => {
             localStorage.setItem("liveChatMessages", JSON.stringify(messages))
         }
         else {
-            if (count >=0) {
+            if (count===0) {
                 const messageData = JSON.parse(localStorage.getItem("liveChatMessages")) || []
                 setMessages(messageData)
             }
