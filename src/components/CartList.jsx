@@ -24,7 +24,7 @@ const CartList = () => {
                             <tbody>
                                 <tr>
                                     <td><button><i class="fa-solid fa-xmark text-3xl"></i></button></td>
-                                    <td className='flex justify-center'><Image src={img} width={60}></Image></td>
+                                    <td className='flex justify-center'><Image src={img} width={60} alt="product"></Image></td>
                                     <td>Baby Boomers</td>
                                     <td>49$</td>
                                     <td className=''><Counter/></td>
@@ -36,7 +36,7 @@ const CartList = () => {
                             <div className="product p-4 rounded-lg mb-3 relative dark:bg-gray-700 bg-gray-100">
                                 <button className='absolute top-5 left-5'><i class="fa-solid fa-xmark text-3xl"></i></button>
                                 <div className="product-photo flex justify-center">
-                                    <Image src={img} width={60}></Image>
+                                    <Image src={img} width={60} alt="product"></Image>
                                 </div>
                                 <div className="data">
                                     <div className="flex justify-between items-center py-5">
@@ -67,7 +67,7 @@ const CartList = () => {
                         <i className="ri-shopping-cart-line text-9xl text-gray-600 dark:text-gray-200"></i>
                         <h1 className='font-semibold text-5xl'>No products in the cart.</h1>
                         <p className='mt-6'>Before proceed to checkout you must add some products to your shopping cart.</p>
-                        <p className='mb-7'>You will find a lot of interesting products on our "Shop" page.</p>
+                        <p className='mb-7'>You will find a lot of interesting products on our {"Shop"} page.</p>
                         <Link className='uppercase text-red-400 font-semibold border-b-2 border-red-400 pb-1 inline-block' href={'/shop'}>continue shopping</Link>
                     </div>
 

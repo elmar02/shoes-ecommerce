@@ -19,7 +19,7 @@ const WishList = () => {
                     <tbody>
                         <tr>
                             <td><button><i class="fa-solid fa-heart text-red-400 px-2 md:p-0"></i></button></td>
-                            <td className='flex justify-center'><Image src={img} width={60}></Image></td>
+                            <td className='flex justify-center'><Image src={img} width={60} alt='product'></Image></td>
                             <td>Baby Boomers</td>
                             <td>$49</td>
                             <td>Stocked</td>
