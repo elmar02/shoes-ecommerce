@@ -27,7 +27,7 @@ const SlickSlider = () => {
         ]
     };
     return (
-        <div className='slickSlider pb-12'>
+        <div className='slickSlider pt-5 pb-12'>
             <Slider {...settings}>
                 <Slide />
                 <Slide />

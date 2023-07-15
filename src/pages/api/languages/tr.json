@@ -167,6 +167,7 @@
         "title": "İstek Listesi"
     },
     "error": {
-        "title": "404 | Hata, sayfa bulunamadı"
+        "title": "404 | Hata, sayfa bulunamadı",
+        "gohome": "Ana Sayfaya Dön"
     }
 }

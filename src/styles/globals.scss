@@ -113,10 +113,22 @@ html {
   }
 }
 
+input{
+   background: transparent;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+}
+
+input:-webkit-autofill:hover {
+  background-color: transparent !important;
+}
+
 .banner {
   background-image: url('../images/static/banner-bg.jpg');
 
-  height: 250px;
+  height: 285px;
   background-position: top center;
   display: flex;
   justify-content: center;

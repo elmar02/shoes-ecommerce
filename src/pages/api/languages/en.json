@@ -167,6 +167,7 @@
         "title": "Wishlist"
     },
     "error": {
-        "title": "404 | Opps, page not found"
+        "title": "404 | Opps, page not found",
+        "gohome": "Go Home"
     }
 }

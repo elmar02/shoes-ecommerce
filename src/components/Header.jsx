@@ -188,7 +188,7 @@ const Header = () => {
     return (
         <header>
             <button onClick={up} ref={upRef} className='fixed z-10 hidden w-9 h-9 justify-center items-center rounded-full bg-red-400 text-white bottom-10 right-10'><i class="fa-solid fa-chevron-up"></i></button>
-            <div ref={barRef} className="mobile-side-bar collapsed md:hidden fixed left-0 w-72 top-0 bottom-0 bg-white z-50 p-1">
+            <div ref={barRef} className="mobile-side-bar collapsed md:hidden fixed left-0 w-72 top-0 bottom-0 bg-white z-50 p-1 dark:bg-gray-900 dark:text-white">
                 <div className='flex items-center mt-1 mb-2'>
                     <form action="search" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
                         <label htmlFor="search"><i class="fa-solid fa-magnifying-glass text-red-400 mx-1"></i></label>
@@ -294,7 +294,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div ref={searchRef} className="searched-box collapsed hidden md:flex fixed z-40 bg-white left-0 right-0 top-0 h-1/6 p-3 items-center">
+            <div ref={searchRef} className="searched-box collapsed hidden md:flex fixed z-40 bg-white left-0 right-0 top-0 h-1/6 p-3 items-center dark:bg-gray-900 dark:text-white">
                 <form action="search" className='flex search border-2 border-red-400 w-full rounded-md p-1'>
                     <label htmlFor="search"><i class="fa-solid fa-magnifying-glass text-red-400 mx-1"></i></label>
                     <input id='search' type="text" name='q' placeholder={header.search} className='outline-none w-full placeholder:text-red-400' />

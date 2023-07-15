@@ -167,6 +167,7 @@
         "title": "Seçilmişlər"
     },
     "error": {
-        "title": "404 | Xəta, səhifə tapılmadı"
+        "title": "404 | Xəta, səhifə tapılmadı",
+        "gohome": "Əsas Səhifəyə Qayıt"
     }
 }

@@ -58,7 +58,6 @@ const CartList = () => {
                                 </div>
                             </div>
                         </div>
-                        {/* <CartItem/> */}
                         <div className='flex justify-end py-4'><span className='font-bold pe-1'>Total:</span>49$</div>
 
                     </div>

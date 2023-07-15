@@ -15,9 +15,7 @@ const Layout = (props) => {
   const pages = languages[selectedLanguage].pages;
   const searchTitle = languages[selectedLanguage].header.search
   const filteredPages = pages.find(page => page.page_url === router.pathname);
-  const title = filteredPages.name.replace('search',search).replace('number',number)
-  const home = ['Home','Əsas Səhifə','Ana Sayfa']
-  
+  const title = filteredPages.name.replace('search',search).replace('number',number)  
 
   useEffect(() => {
     document.title = (router.pathname==='/search'? `${searchTitle}: `:'')+ title + ' / Elessi';
@@ -27,7 +25,7 @@ const Layout = (props) => {
     <>
     <LiveChat/>
     <Header/>
-    {!home.includes(title)? <Banner title={title}/> : <></>}
+    {router.pathname!=='/home'? <Banner title={title}/> : <></>}
     <div>{ props.children }</div>
     <Footer/>
     </>
