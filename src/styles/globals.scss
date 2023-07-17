@@ -232,3 +232,17 @@ input:-webkit-autofill:hover {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.shop-bar{
+  a{
+    overflow: hidden;
+    &:hover{
+      img{
+        scale: 1.1;
+      }
+    }
+    img{
+      transition: all 0.3s ease;
+    }
+  }
+}

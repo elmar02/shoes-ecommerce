@@ -1,9 +1,8 @@
 import React from 'react'
 
-const product_detail = () => {
+export default function Product_detail() {
   return (
     <div>product_detail</div>
   )
 }
 
-export default product_detail

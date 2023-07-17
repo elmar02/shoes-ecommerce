@@ -8,7 +8,8 @@ import Banner3 from '@/images/about/banner3.jpg'
 import Icon from '@/images/about/icon.jpg'
 import Image from 'next/image'
 import Slider from 'react-slick'
-const about = () => {
+
+export default function About () {
   const settings = {
     dots: true,
     infinite: true,
@@ -40,7 +41,7 @@ const about = () => {
                 <Link href={'https://www.behance.net/'} target='_blank'><i className="fa-brands fa-behance"></i></Link>
               </div>
               <div className="image">
-                <Image className='w-full' src={Banner1} />
+                <Image className='w-full' src={Banner1}  alt='banner'/>
               </div>
               <div className="text-box">
                 <h1 className='mt-3 mb-5 font-bold'>Lisa John</h1>
@@ -55,7 +56,7 @@ const about = () => {
                 <Link href={'https://www.behance.net/'} target='_blank'><i className="fa-brands fa-behance"></i></Link>
               </div>
               <div className="image">
-                <Image className='w-full' src={Banner2} />
+                <Image className='w-full' src={Banner2} alt='banner'/>
               </div>
               <div className="text-box">
                 <h1 className='mt-3 mb-5 font-bold'>Jane Doe</h1>
@@ -70,7 +71,7 @@ const about = () => {
                 <Link href={'https://www.behance.net/'} target='_blank'><i className="fa-brands fa-behance"></i></Link>
               </div>
               <div className="image">
-                <Image className='w-full' src={Banner3} />
+                <Image className='w-full' src={Banner3} alt='banner'/>
               </div>
               <div className="text-box">
                 <h1 className='mt-3 mb-5 font-bold'>Cartherin Forres</h1>
@@ -82,19 +83,19 @@ const about = () => {
             <h2 className='text-3xl font-bold mb-7'>Our customers reviews</h2>
             <Slider {...settings}>
               <div className='mb-7'>
-                <div className='flex justify-center'><Image className='rounded-full' src={Icon}/></div>
+                <div className='flex justify-center'><Image className='rounded-full' src={Icon} alt='icon'/></div>
                 <p className='my-3 w-3/4 mx-auto'>A good theme is one thing, but with brilliant support behind it, it becomes a great theme. I had to narrow down from quite a selection of good themes for my Shopify store, what settled it for me to choose Gecko, was the ability to have custom swatches for product variations. My code knowledge is very limited, so I needed help with some customization, and I am very impressed with the prompt support in getting the site looking just how I needed it on both desktop and mobile. Keep up the great work The4 team!</p>
                 <span className='font-semibold'>hjghhjgh </span>
                 <span>- Happy Customer</span>
               </div>
               <div className='mb-7'>
-                <div className='flex justify-center'><Image className='rounded-full' src={Icon}/></div>
+                <div className='flex justify-center'><Image className='rounded-full' src={Icon} alt='icon'/></div>
                 <p className='my-3 w-3/4 mx-auto'>A good theme is one thing, but with brilliant support behind it, it becomes a great theme. I had to narrow down from quite a selection of good themes for my Shopify store, what settled it for me to choose Gecko, was the ability to have custom swatches for product variations. My code knowledge is very limited, so I needed help with some customization, and I am very impressed with the prompt support in getting the site looking just how I needed it on both desktop and mobile. Keep up the great work The4 team!</p>
                 <span className='font-semibold'>hjghhjgh </span>
                 <span>- Happy Customer</span>
               </div>
               <div className='mb-7'>
-                <div className='flex justify-center'><Image className='rounded-full' src={Icon}/></div>
+                <div className='flex justify-center'><Image className='rounded-full' src={Icon} alt='icon'/></div>
                 <p className='my-3 w-3/4 mx-auto'>A good theme is one thing, but with brilliant support behind it, it becomes a great theme. I had to narrow down from quite a selection of good themes for my Shopify store, what settled it for me to choose Gecko, was the ability to have custom swatches for product variations. My code knowledge is very limited, so I needed help with some customization, and I am very impressed with the prompt support in getting the site looking just how I needed it on both desktop and mobile. Keep up the great work The4 team!</p>
                 <span className='font-semibold'>hjghhjgh </span>
                 <span>- Happy Customer</span>
@@ -106,5 +107,3 @@ const about = () => {
     </Layout>
   )
 }
-
-export default about

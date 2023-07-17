@@ -71,7 +71,7 @@ const LiveChat = () => {
             <div className="body dark:text-white dark:bg-gray-900 bg-white">
                 <div className="chat-header flex p-2">
                     <div className="avatar w-11">
-                        <Image width={100} src={Avatar} />
+                        <Image width={100} src={Avatar} alt='avatar' />
                     </div>
                     <div className="name ms-2">
                         <h1 className="font-bold">Sənan A.</h1>
@@ -82,7 +82,7 @@ const LiveChat = () => {
                     <div className="salesman default flex flex-col items-start">
                         <div className="profile flex text-sm">
                             <div className="avatar w-5">
-                                <Image width={100} src={Avatar}></Image>
+                                <Image width={100} src={Avatar} alt='avatar'/>
                             </div>
                             <div className="name ms-2 text-gray-500 dark:text-gray-300">Senan A.</div>
                             <div className="date ms-1 text-gray-500 dark:text-gray-300">{new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}</div>
@@ -96,7 +96,7 @@ const LiveChat = () => {
                             <div key={index} className="salesman flex flex-col items-start">
                                 <div className="profile flex text-sm">
                                     <div className="avatar w-5">
-                                        <Image width={100} src={Avatar}></Image>
+                                        <Image width={100} src={Avatar} alt='avatar'/>
                                     </div>
                                     <div className="name ms-2 text-gray-500 dark:text-gray-300">Senan A.</div>
                                     <div className="date ms-1 text-gray-500 dark:text-gray-300">{message.timestamp}</div>

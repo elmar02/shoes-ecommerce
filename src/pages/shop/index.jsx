@@ -1,11 +1,9 @@
 import React from 'react'
 import Layout from '../../../layout/Layout'
 
-const shop = () => {
+export default function Shop () {
   return (
     <Layout>
     </Layout>
   )
 }
-
-export default shop

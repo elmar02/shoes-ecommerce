@@ -14,7 +14,7 @@ import Brand6 from '@/images/home/brand-6_600x.png'
 import Image from 'next/image'
 import Slider from 'react-slick'
 
-const home = () => {
+export default function Home () {
   const settings = {
     arrows:false,
     dots: false,
@@ -89,5 +89,3 @@ const home = () => {
     </Layout>
   )
 }
-
-export default home

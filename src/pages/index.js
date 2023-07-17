@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   const router = useRouter();
   useEffect(() => {
-    router.push('/home');
+    router.replace('/home');
   }, []);
 
   return (
