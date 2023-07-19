@@ -5,12 +5,13 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 import { getCurrency } from '../util';
 const Slide = () => {
+    const dataPrice = 99.99
     const selectedLanguage = useSelector((state) => state.language.lang);
     const languages = useSelector((state) => state.language.languages);
     const slider = languages[selectedLanguage].home.slider;
     const selectedCurrency = useSelector((state) => state.currency.currency);
     const constant = getCurrency(selectedCurrency)[0]*100;
-    const price = Math.round(constant*99.99)/100
+    const price = Math.round(constant*dataPrice)/100
     const sign = getCurrency(selectedCurrency)[1]
     return (
         <div>

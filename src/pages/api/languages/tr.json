@@ -31,6 +31,10 @@
         {
             "name": "'search' için number sonuç",
             "page_url": "/search"
+        },
+        {
+            "name": "Product",
+            "page_url": "/shop/[product_detail]"
         }
     ],
     "header": {

@@ -31,6 +31,14 @@
         {
             "name": "number results for 'search'",
             "page_url": "/search"
+        },
+        {
+            "name": "Product",
+            "page_url": "/shop/[product_detail]"
+        },
+        {
+            "name": "Product",
+            "page_url": "/shop/[product_detail]"
         }
     ],
     "header": {
@@ -170,4 +178,5 @@
         "title": "404 | Opps, page not found",
         "gohome": "Go Home"
     }
+
 }
