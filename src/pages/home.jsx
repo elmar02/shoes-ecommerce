@@ -51,21 +51,21 @@ export default function Home () {
         <section className='pt-20 pb-10'>
           <div className='mx-auto px-5'>
             <div className="shop-bar grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-5">
-              <Link className='relative' href={'/shop'}>
+              <Link className='relative' href={'/shop?cat=shoes'}>
                 <Image className='w-full' src={Banner1} alt='banner1' />
                 <div className="text-box absolute top-1/2 -translate-y-1/2 left-12 md:left-6">
                   <h1 className='font-semibold text-2xl text-black leading-7'>New <br /> season {new Date().getFullYear()}</h1>
                   <p className='font-bold text-gray-500'>Shoes & Accessories</p>
                 </div>
               </Link>
-              <Link className='relative' href={'/shop'}>
+              <Link className='relative' href={'/shop?cat=slippers'}>
                 <Image className='w-full' src={Banner2} alt='banner2' />
                 <div className="text-box absolute top-1/2 -translate-y-1/2 left-12 md:left-6">
                   <h1 className='font-semibold text-2xl text-white  leading-7'>Spring <br /> Arrivals</h1>
                   <p className='font-bold text-white'>Shoes Collections</p>
                 </div>
               </Link>
-              <Link className='relative' href={'/shop'}>
+              <Link className='relative' href={'/shop?cat=high-heels'}>
                 <Image className='w-full' src={Banner3} alt='banner3' />
                 <div className="text-box absolute top-12 md:top-4 left-12 md:left-6">
                   <h1 className='font-semibold text-2xl text-black'>Classic Collections</h1>

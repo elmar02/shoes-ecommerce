@@ -3,10 +3,14 @@ import Avatar from '@/images/static/avatar.png';
 import Image from 'next/image';
 const LiveChat = () => {
     const chatRef = useRef();
+    const chatbodyRef = useRef();
     const [isClosed, setIsClosed] = useState(true);
     const [messages, setMessages] = useState([]);
     const [count, setCount] = useState(0)
     useEffect(() => {
+        if (chatbodyRef.current) {
+            chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight;
+        }
         const timer = setTimeout(() => {
             chatRef.current.classList.remove('hidden');
         }, 3000);
@@ -16,11 +20,14 @@ const LiveChat = () => {
     }, []);
 
     useEffect(() => {
+        if (chatbodyRef.current) {
+            chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight;
+        }
         if (messages.length !== 0) {
             localStorage.setItem("liveChatMessages", JSON.stringify(messages))
         }
         else {
-            if (count===0) {
+            if (count === 0) {
                 const messageData = JSON.parse(localStorage.getItem("liveChatMessages")) || []
                 setMessages(messageData)
             }
@@ -31,6 +38,9 @@ const LiveChat = () => {
     const toggleChar = () => {
         chatRef.current.classList.toggle('closed');
         setIsClosed(!isClosed);
+        if (chatbodyRef.current) {
+            chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight;
+        }
     };
 
     const handleSendMessage = (e) => {
@@ -78,11 +88,11 @@ const LiveChat = () => {
                         <p className="text-gray-500 dark:text-gray-300">Satış təmsilcisi</p>
                     </div>
                 </div>
-                <div className="chat-body h-72 shadow-inner overflow-y-scroll p-2 dark:bg-gray-800 bg-gray-100">
+                <div ref={chatbodyRef} className="chat-body h-72 shadow-inner overflow-y-scroll p-2 dark:bg-gray-800 bg-gray-100">
                     <div className="salesman default flex flex-col items-start">
                         <div className="profile flex text-sm">
                             <div className="avatar w-5">
-                                <Image width={100} src={Avatar} alt='avatar'/>
+                                <Image width={100} src={Avatar} alt='avatar' />
                             </div>
                             <div className="name ms-2 text-gray-500 dark:text-gray-300">Senan A.</div>
                             <div className="date ms-1 text-gray-500 dark:text-gray-300">{new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}</div>
@@ -96,7 +106,7 @@ const LiveChat = () => {
                             <div key={index} className="salesman flex flex-col items-start">
                                 <div className="profile flex text-sm">
                                     <div className="avatar w-5">
-                                        <Image width={100} src={Avatar} alt='avatar'/>
+                                        <Image width={100} src={Avatar} alt='avatar' />
                                     </div>
                                     <div className="name ms-2 text-gray-500 dark:text-gray-300">Senan A.</div>
                                     <div className="date ms-1 text-gray-500 dark:text-gray-300">{message.timestamp}</div>
