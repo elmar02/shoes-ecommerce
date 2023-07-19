@@ -24,16 +24,16 @@ export default function Cart() {
                   </tr>
                 </thead>
                 <tbody>
-                <Product medium={true}/>
+                <Product/>
                 </tbody>
               </table>
               <div className="cartTable-mobile md:hidden pt-8">
                 <div className="product p-4 rounded-lg mb-3 relative dark:bg-gray-700 bg-gray-100">
-                  <button className='absolute top-5 left-5' title='Remove'><i class="fa-solid fa-xmark text-3xl"></i></button>
+                  <button className='absolute top-5 left-5' title='Remove'><i className="fa-solid fa-xmark text-3xl"></i></button>
                   <div className="product-photo flex justify-center">
                     <Image src={img} width={60} alt="product"/>
                   </div>
-                  <Product medium={false}/>
+                  <Product/>
                 </div>
               </div>
               <div className='flex justify-end py-4'><span className='font-bold pe-1'>Total:</span>49$</div>
@@ -54,20 +54,18 @@ export default function Cart() {
   )
 }
 
-const Product = ({ medium }) => {
+const Product = () => {
   return (
     <>
-      {
-        medium ?
-          <tr>
-            <td><button title='Remove'><i class="fa-solid fa-xmark text-3xl"></i></button></td>
+          <tr className='md:table-row hidden'>
+            <td><button title='Remove'><i className="fa-solid fa-xmark text-3xl"></i></button></td>
             <td className='flex justify-center'><Image src={img} width={60} alt="product"/></td>
             <td>Baby Boomers</td>
             <td>49$</td>
             <td className=''><Counter /></td>
             <td>49$</td>
-          </tr> :
-          <div className="data">
+          </tr>
+          <div className="data md:hidden block">
             <div className="flex justify-between items-center py-5">
               <h1>Product:</h1>
               <p>Baby Boomers</p>
@@ -85,8 +83,6 @@ const Product = ({ medium }) => {
               <p>49$</p>
             </div>
           </div>
-
-      }
     </>
   )
 }

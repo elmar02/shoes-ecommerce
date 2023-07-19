@@ -20,9 +20,9 @@ const Item = () => {
       <Link href={'/shop/product'} className="image-box block transition-colors bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700">
         <Image className='w-full' src={imgsrc} alt='product-img' />
       </Link>
-      <button title='Add to wishlist' className='wish-button absolute top-4 right-4 text-xl hover:animate-bounce'>{false ? <i class="fa-solid fa-heart"></i> : <i class="fa-regular fa-heart"></i>}</button>
-      <button onClick={changeDisplay} title='Quick view' className='view-button absolute top-16 right-1 bg-neutral-800 text-white px-3 py-2 rounded-full md:invisible md:translate-x-5 md:opacity-0'><i class="fa-regular fa-eye"></i></button>
-      <button title='Add to cart' className='cart-button absolute right-1 bottom-16 bg-red-400 text-white w-10 h-10 rounded-full md:invisible md:translate-x-5 md:opacity-0'><i class="ri-shopping-bag-line"></i></button>
+      <button title='Add to wishlist' className='wish-button absolute top-4 right-4 text-xl hover:animate-bounce'>{false ? <i className="fa-solid fa-heart"></i> : <i className="fa-regular fa-heart"></i>}</button>
+      <button onClick={changeDisplay} title='Quick view' className='view-button absolute top-16 right-1 bg-neutral-800 text-white px-3 py-2 rounded-full md:invisible md:translate-x-5 md:opacity-0'><i className="fa-regular fa-eye"></i></button>
+      <button title='Add to cart' className='cart-button absolute right-1 bottom-16 bg-red-400 text-white w-10 h-10 rounded-full md:invisible md:translate-x-5 md:opacity-0'><i className="ri-shopping-bag-line"></i></button>
       <div className="title-box py-4 dark:text-white">
         <Link className='hover:text-red-400 text-lg transition-colors' href={'shop/product'}><h1>Travel Boots</h1></Link>
         <p className='font-semibold'>{price + sign}</p>
