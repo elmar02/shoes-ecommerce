@@ -128,12 +128,12 @@ const LiveChat = () => {
                 </div>
                 <form onSubmit={handleSendMessage} className="type-box flex items-center justify-between bg-white dark:bg-gray-900">
                     <input
-                        className="bg-transparent p-3 grow outline-none"
+                        className="bg-transparent p-3 w-5/6 outline-none"
                         type="text"
                         placeholder="Mesajınızı bura yazın"
                         name="messageInput"
                     />
-                    <button type="submit" className='w-fit text-center'>
+                    <button type="submit" className='w-1/6 text-center'>
                         <i className="ri-send-plane-2-line p-2 text-2xl cursor-pointer"></i>
                     </button>
                 </form>
