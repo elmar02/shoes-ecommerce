@@ -133,7 +133,7 @@ const LiveChat = () => {
                         placeholder="Mesajınızı bura yazın"
                         name="messageInput"
                     />
-                    <button type="submit">
+                    <button type="submit" className='w-fit text-center'>
                         <i className="ri-send-plane-2-line p-2 text-2xl cursor-pointer"></i>
                     </button>
                 </form>
