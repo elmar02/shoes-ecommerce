@@ -310,3 +310,39 @@ input:-webkit-autofill:hover {
 
 }
 
+.productSlick{
+  .slick-prev{
+    left: 10px;
+    z-index: 1;
+    &::before{
+      content: '\f053';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+    }
+  }
+  .slick-next{
+    right: 26px;
+    &::before{
+      content: '\f054';
+    }
+  }
+  .slick-next,.slick-prev{
+    &::before{
+      opacity: 1;
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      @apply dark:bg-gray-900 bg-white text-gray-500 py-2 px-3;
+    }
+    &.slick-disabled{
+      &::before{
+        opacity: 0.5 !important;
+      }
+    }
+  }
+  .slick-slide > div {
+    margin: 0 10px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+}

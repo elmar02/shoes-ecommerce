@@ -10,7 +10,7 @@ export default function Cart() {
     <Layout>
       <section className='dark:bg-gray-900 dark:text-white  mx-auto px-5'>
         {
-          true ?
+          false ?
             <div>
               <table className='cartTable hidden md:table w-full text-center'>
                 <thead>
@@ -25,6 +25,10 @@ export default function Cart() {
                 </thead>
                 <tbody>
                 <Product/>
+                <Product/>
+                <Product/>
+                <Product/>
+                <Product/>
                 </tbody>
               </table>
               <div className="cartTable-mobile md:hidden pt-8">
@@ -34,17 +38,20 @@ export default function Cart() {
                     <Image src={img} width={60} alt="product"/>
                   </div>
                   <Product/>
+                  <Product/>
+                  <Product/>
+                  <Product/>
+                  <Product/>
                 </div>
               </div>
               <div className='flex justify-end py-4'><span className='font-bold pe-1'>Total:</span>49$</div>
 
             </div>
             :
-            <div className='empty text-center'>
+            <div className='empty text-center py-12'>
               <i className="ri-shopping-cart-line text-9xl text-gray-600 dark:text-gray-200"></i>
               <h1 className='font-semibold text-5xl'>No products in the cart.</h1>
-              <p className='mt-6'>Before proceed to checkout you must add some products to your shopping cart.</p>
-              <p className='mb-7'>You will find a lot of interesting products on our {"Shop"} page.</p>
+              <p className='mt-6 mb-7'>You will find a lot of interesting products on our {"Shop"} page.</p>
               <Link className='uppercase text-red-400 font-semibold border-b-2 border-red-400 pb-1 inline-block' href={'/shop'}>continue shopping</Link>
             </div>
 
