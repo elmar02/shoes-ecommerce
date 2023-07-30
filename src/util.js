@@ -10,4 +10,3 @@ export function getCurrency(currencyName) {
             return [1,'$']
     }
 }
-

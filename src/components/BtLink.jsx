@@ -3,7 +3,7 @@ import React from 'react'
 
 const BtLink = (props) => {
   return (
-    <Link className='bg-red-400 hover:bg-red-300 text-white mt-3 p-2 text-xl' href={props.to}>{props.title}</Link>
+    <Link className='bg-red-400 hover:bg-red-300 text-white p-2 text-xl' href={props.to}>{props.title}</Link>
   )
 }
 

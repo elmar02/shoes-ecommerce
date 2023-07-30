@@ -13,10 +13,14 @@ import Brand5 from '@/images/home/brand-5_600x.png'
 import Brand6 from '@/images/home/brand-6_600x.png'
 import Image from 'next/image'
 import Slider from 'react-slick'
+import Timer from '@/components/Timer'
+import { getServerSideProps } from './api/product';
+export { getServerSideProps };
 
-export default function Home () {
+
+export default function Home({ products }) {
   const settings = {
-    arrows:false,
+    arrows: false,
     dots: false,
     infinite: false,
     speed: 500,
@@ -44,11 +48,12 @@ export default function Home () {
       }
     ]
   };
+  const targetDate = new Date("2023-08-04T00:00:00");
   return (
     <Layout>
       <header className='dark:bg-gray-900 dark:text-white'>
         <SlickSlider />
-        <section className='pt-20 pb-10'>
+        <section className='pt-16'>
           <div className='mx-auto px-5'>
             <div className="shop-bar grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-5">
               <Link className='relative' href={'/shop?cat=shoes'}>
@@ -73,19 +78,33 @@ export default function Home () {
                 </div>
               </Link>
             </div>
+          </div>
+        </section>
+        <section className='offer-banner w-full p-3 my-20'>
+          <div className="flex items-center justify-center space-y-5 md:space-y-0 md:space-x-8 font-bold flex-col md:flex-row">
+            <div className="textbox text-yellow-400 text-center md:text-start">
+              <h1 className='font-extrabold text-xl'>Black Friday Sale</h1>
+              <p className='font-normal'>up to 50% OFF</p>
+            </div>
+            <Timer targetDate={targetDate} />
+            <Link className='bg-yellow-400 rounded-md hover:bg-yellow-300 text-black py-4 px-7 text-sm hidden md:block' href={'/shop'}>Shop Now</Link>
+          </div>
+        </section>
+        <section className='pb-10'>
+          <div className='mx-auto px-5'>
             <div className="brands mt-10 dark:invert">
               <Slider {...settings}>
-                <Link className='hover:opacity-70' target='_blank' href={'https://www.sezane.com'} ><Image src={Brand1} alt='brand'/></Link>
-                <Link className='hover:opacity-70' target='_blank' href={'https://www.terranovastyle.com'} ><Image src={Brand2} alt='brand'/></Link>
-                <Link className='hover:opacity-70' target='_blank' href={'https://www.zara.com'} ><Image src={Brand3} alt='brand'/></Link>
-                <Link className='hover:opacity-70' target='_blank' href={'https://www.bershka.com'} ><Image src={Brand4} alt='brand'/></Link>
-                <Link className='hover:opacity-70' target='_blank' href={'https://www.pullandbear.com'} ><Image src={Brand5} alt='brand'/></Link>
-                <Link className='hover:opacity-70' target='_blank' href={'https://www.forever21.com'} ><Image src={Brand6} alt='brand'/></Link>
+                <Link className='hover:opacity-70' target='_blank' href={'https://www.sezane.com'} ><Image src={Brand1} alt='brand' /></Link>
+                <Link className='hover:opacity-70' target='_blank' href={'https://www.terranovastyle.com'} ><Image src={Brand2} alt='brand' /></Link>
+                <Link className='hover:opacity-70' target='_blank' href={'https://www.zara.com'} ><Image src={Brand3} alt='brand' /></Link>
+                <Link className='hover:opacity-70' target='_blank' href={'https://www.bershka.com'} ><Image src={Brand4} alt='brand' /></Link>
+                <Link className='hover:opacity-70' target='_blank' href={'https://www.pullandbear.com'} ><Image src={Brand5} alt='brand' /></Link>
+                <Link className='hover:opacity-70' target='_blank' href={'https://www.forever21.com'} ><Image src={Brand6} alt='brand' /></Link>
               </Slider>
             </div>
           </div>
         </section>
-      </header>
-    </Layout>
+      </header >
+    </Layout >
   )
 }

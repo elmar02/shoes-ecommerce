@@ -173,6 +173,7 @@ const Header = () => {
         checkMode();
         checkLang();
         checkCurrency();
+        fixedHeader();
         window.addEventListener("scroll", closeBar);
         window.addEventListener("scroll", closeSearch);
         window.addEventListener("scroll", fixedHeader);
@@ -184,6 +185,11 @@ const Header = () => {
     }, []);
 
     const header = languages[selectedLanguage].header
+
+    //wishlist
+    const likedIds = useSelector((state)=>state.wishlist.likedIds)
+    //cart
+    const cart = useSelector((state) => state.cart.inCart)
     return (
         <header>
             <button onClick={up} ref={upRef} className='fixed z-10 hidden w-9 h-9 justify-center items-center rounded-full bg-red-400 text-white bottom-10 right-10'><i className="fa-solid fa-chevron-up"></i></button>
@@ -271,13 +277,13 @@ const Header = () => {
                                 <li className='pe-3'>
                                     <Link href={'/wishlist'}>
                                         <i className="fa-regular fa-heart"></i>
-                                        <div className='box bg-red-400 text-white px-2 rounded-full'>0</div>
+                                        <div className='box bg-red-400 text-white px-2 rounded-full'>{likedIds.length}</div>
                                     </Link>
                                 </li>
                                 <li className='pe-3'>
                                     <Link href={'/cart'}>
                                         <i className="fa-solid fa-cart-shopping"></i>
-                                        <div className='box bg-red-400 text-white px-2 rounded-full'>0</div>
+                                        <div className='box bg-red-400 text-white px-2 rounded-full'>{cart.length}</div>
                                     </Link>
                                 </li>
                                 <li className='themeToggle relative ps-2'>

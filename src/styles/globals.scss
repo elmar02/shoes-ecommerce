@@ -128,8 +128,8 @@ input:-webkit-autofill:hover {
 .banner {
   background-image: url('../images/static/banner-bg.jpg');
 
-  height: 285px;
-  background-position: top center;
+  // height: 285px;
+  @apply h-52 sm:h-72;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -345,4 +345,64 @@ input:-webkit-autofill:hover {
   .slick-list {
     margin: 0 -10px;
   }
+}
+
+.offer-banner{
+  background: url('../images/home/black-friday-banner.png');
+  background-attachment: fixed;
+  .textbox{
+    animation: pulse 1s ease infinite;
+  }
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(1.1);
+  }
+  50%{
+    transform: scale(1);
+  }
+  100%{
+    transform: scale(1.1);
+  }
+}
+
+.no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.no-arrows {
+  /* Optional styles for a clean, non-styled appearance */
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.ring-shake {
+  color: #121212 !important;
+  padding: 1px 5px;
+  transition: transform 0.8s ease;
+  animation: shake 1.2s infinite;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0); }
+  10% { transform: rotate(-10deg); }
+  20% { transform: rotate(10deg); }
+  30% { transform: rotate(-3deg); }
+  40% { transform: rotate(3deg); }
+  50% { transform: rotate(0); }
+  100% { transform: rotate(0); }
+}
+
+.Toastify__progress-bar--success {
+  background: rgb(248, 113, 113) !important;
+}
+
+.Toastify__toast-body > div:last-child {
+  padding-left: 10px;
+}
+
+.cart-button{
+  top: 360px;
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import Item from './Item'
 import Slider from 'react-slick';
 
-const ProductSlick = () => {
+const ProductSlick = ({products}) => {
     const settings = {
         dots: false,
         infinite: false,
@@ -29,10 +29,9 @@ const ProductSlick = () => {
     return (
         <div className='productSlick'>
             <Slider {...settings}>
-                <Item />
-                <Item />
-                <Item />
-                <Item />
+                {products?.map((item,index)=>(
+                    <Item key={index} product={item}/>
+                ))}
             </Slider>
         </div>
     )

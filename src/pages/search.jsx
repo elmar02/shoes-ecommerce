@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../../layout/Layout'
 import { useRouter } from 'next/router'
 import Item from '@/components/Item'
-
-export default function Search() {
-  const router = useRouter()
+import { getServerSideProps } from './api/product';
+export { getServerSideProps };
+export default function Search({ products }) {
+  const router = useRouter();
+  const { q } = router.query;
+  const [searchedProducts, setSearchedProducts] = useState([]);
   const [other, setOther] = useState('grid-cols-2')
   const [medium, setMedium] = useState('md:grid-cols-3')
   const [large, setLarge] = useState('lg:grid-cols-4')
@@ -18,8 +21,16 @@ export default function Search() {
       case 5: setXlarge('xl:grid-cols-5'); break
     }
   }
+
+  useEffect(() => {
+    if (q !== '') {
+      const filteredProducts = products?.filter((item) => item.title.toLowerCase().includes(q.toLowerCase()) || item.category.toLowerCase().includes(q.toLowerCase()))
+      setSearchedProducts(filteredProducts)
+    }
+  }, [q])
+
   return (
-    <Layout>
+    <Layout result={searchedProducts?.length}>
       <section className='dark:bg-gray-900 dark:text-white'>
         <div className="mx-auto px-7 py-10">
           <div className="filter-area flex justify-center">
@@ -53,21 +64,17 @@ export default function Search() {
           </div>
           <hr className='border-gray-300 dark:border-gray-600 mt-4 mb-10' />
           {
-            false?
-            <div className={`products grid ${other} ${medium} ${large} ${xlarge} gap-x-3 gap-y-10`}>
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-            <Item />
-          </div>
-            :
-            <div className="empty flex items-center py-4 px-6 border-2 space-x-3 dark:border-gray-700 text-gray-500 dark:text-gray-300">
-              <i class="fa-solid fa-triangle-exclamation"></i>
-              <p>No products were found matching your selection.</p>
-            </div>
+            searchedProducts?.length !== 0 ?
+              <div className={`products grid ${other} ${medium} ${large} ${xlarge} gap-x-3 gap-y-10`}>
+                {searchedProducts?.map((item, index) => (
+                  <Item key={index} product={item} />
+                ))}
+              </div>
+              :
+              <div className="empty flex items-center py-4 px-6 border-2 space-x-3 dark:border-gray-700 text-gray-500 dark:text-gray-300">
+                <i className="fa-solid fa-triangle-exclamation"></i>
+                <p>No products were found matching your selection.</p>
+              </div>
           }
         </div>
       </section>

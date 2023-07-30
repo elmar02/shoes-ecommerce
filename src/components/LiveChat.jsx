@@ -7,6 +7,7 @@ const LiveChat = () => {
     const [isClosed, setIsClosed] = useState(true);
     const [messages, setMessages] = useState([]);
     const [count, setCount] = useState(0)
+    const [date, setDate] = useState("00:00")
     useEffect(() => {
         if (chatbodyRef.current) {
             chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight;
@@ -14,6 +15,7 @@ const LiveChat = () => {
         const timer = setTimeout(() => {
             chatRef.current.classList.remove('hidden');
         }, 3000);
+        setDate(new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false }))
         return () => {
             clearTimeout(timer);
         }
@@ -95,7 +97,7 @@ const LiveChat = () => {
                                 <Image width={100} src={Avatar} alt='avatar' />
                             </div>
                             <div className="name ms-2 text-gray-500 dark:text-gray-300">Senan A.</div>
-                            <div className="date ms-1 text-gray-500 dark:text-gray-300">{new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false })}</div>
+                            <div className="date ms-1 text-gray-500 dark:text-gray-300">{date}</div>
                         </div>
                         <div className="message-box bg-white dark:bg-gray-900 rounded-lg p-3 ms-6 mt-1 mb-5">
                             Salam, hansı məhsulla maraqlanırsınız? Sizin üçün ən uyğununu seçməkdə kömək edə bilərəm.
