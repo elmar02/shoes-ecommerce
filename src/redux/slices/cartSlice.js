@@ -13,8 +13,8 @@ const cartSlice = createSlice({
             const {products,totalPrice} = action.payload;
             return{
                 ...state,
-                inCart:products,
-                totalPrice:totalPrice
+                inCart:products||[],
+                totalPrice:totalPrice||0
             }
         },
         addToCart(state, action) {

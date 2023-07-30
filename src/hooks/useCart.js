@@ -8,7 +8,7 @@ const useCart = () => {
     const first = useSelector((state) => state.cart.first)
     const dispatch = useDispatch();
     useEffect(() => {
-        const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+        const storedCart = JSON.parse(localStorage.getItem("cart"))||[]
         dispatch(cartActions.setCart(storedCart));
         dispatch(cartActions.setFalse());
     }, [dispatch]);

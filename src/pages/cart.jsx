@@ -35,7 +35,7 @@ export default function Cart() {
                 </thead>
                 <tbody>
                   {
-                    cart.map((item, index) => (
+                    cart?.map((item, index) => (
                       <tr key={index}>
                         <td><button onClick={()=>removeFromCart(item)} title='Remove'><i className="fa-solid fa-xmark text-3xl"></i></button></td>
                         <td className='flex justify-center'><Link href={`/shop/${item.title}?id=${item.id}`}><img className='w-16' src={item.image} alt="product" /></Link></td>
@@ -50,7 +50,7 @@ export default function Cart() {
               </table>
               <div className="cartTable-mobile md:hidden pt-8">
                 {
-                  cart.map((item,index) =>{ return(
+                  cart?.map((item,index) =>{ return(
                     <div key={index} className="product p-4 rounded-lg mb-3 relative dark:bg-gray-700 bg-gray-100 text-right">
                       <button onClick={()=>removeFromCart(item)} className='absolute top-5 left-5' title='Remove'><i className="fa-solid fa-xmark text-3xl"></i></button>
                       <div className="product-photo flex justify-center">
