@@ -25,7 +25,7 @@ const LiveChat = () => {
         if (chatbodyRef.current) {
             chatbodyRef.current.scrollTop = chatbodyRef.current.scrollHeight;
         }
-        if (messages.length !== 0) {
+        if (messages?.length !== 0) {
             localStorage.setItem("liveChatMessages", JSON.stringify(messages))
         }
         else {

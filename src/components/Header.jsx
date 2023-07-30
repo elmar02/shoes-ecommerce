@@ -277,13 +277,13 @@ const Header = () => {
                                 <li className='pe-3'>
                                     <Link href={'/wishlist'}>
                                         <i className="fa-regular fa-heart"></i>
-                                        <div className='box bg-red-400 text-white px-2 rounded-full'>{likedIds.length}</div>
+                                        <div className='box bg-red-400 text-white px-2 rounded-full'>{likedIds?.length}</div>
                                     </Link>
                                 </li>
                                 <li className='pe-3'>
                                     <Link href={'/cart'}>
                                         <i className="fa-solid fa-cart-shopping"></i>
-                                        <div className='box bg-red-400 text-white px-2 rounded-full'>{cart.length}</div>
+                                        <div className='box bg-red-400 text-white px-2 rounded-full'>{cart?.length}</div>
                                     </Link>
                                 </li>
                                 <li className='themeToggle relative ps-2'>

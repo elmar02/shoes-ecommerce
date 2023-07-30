@@ -20,7 +20,7 @@ export default function Cart() {
     <Layout>
       <section className='dark:bg-gray-900 dark:text-white  mx-auto px-5'>
         {
-          cart.length !== 0 ?
+          cart?.length !== 0 ?
             <div>
               <table className='cartTable hidden md:table w-full text-center'>
                 <thead>

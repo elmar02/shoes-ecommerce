@@ -13,13 +13,13 @@ export default function Product_detail({ products }) {
 
     let productList = JSON.parse(localStorage.getItem("visitedProducts"))||[];
     if (!productList.includes(parseInt(id))) productList?.unshift(parseInt(id));
-    if(productList.length>4) productList.pop();
+    if(productList?.length>4) productList.pop();
     const index = productList.indexOf(parseInt(id));
     if (index !== -1) {
     productList.splice(index, 1);
     productList.unshift(parseInt(id));
     }
-    console.log(productList.length);
+    console.log(productList?.length);
     const filteredProducts = productList.map((id)=>products?.find((item)=>item.id===id));
     setRecent(filteredProducts);
     localStorage.setItem("visitedProducts",JSON.stringify(productList))
