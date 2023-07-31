@@ -29,11 +29,11 @@
             "page_url": "/404"
         },
         {
-            "name": "'search' için number sonuç",
+            "name": "'[SEARCH]' için [NUMBER] sonuç",
             "page_url": "/search"
         },
         {
-            "name": "Product",
+            "name": "[PRODUCT]",
             "page_url": "/shop/[product_detail]"
         }
     ],
@@ -150,9 +150,10 @@
     "home": {
         "title": "Ana Sayfa",
         "slider": [
-            {
-                "title": "Seyahat Botları"
-            }
+            "Seyahat Ayakkabıları",
+            "Küçük Patiler",
+            "Ultra Ayakkabılar",
+            "Elessi Spor Galaksi"
         ]
     },
     "shop": {

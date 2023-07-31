@@ -28,7 +28,6 @@ html {
   }
 }
 
-
 .checkbox {
   opacity: 0;
   position: absolute;
@@ -101,10 +100,6 @@ html {
   }
 }
 
-
-
-
-
 .searched-box {
   transition: transform 0.5s ease;
 
@@ -128,8 +123,7 @@ input:-webkit-autofill:hover {
 .banner {
   background-image: url('../images/static/banner-bg.jpg');
 
-  // height: 285px;
-  @apply h-52 sm:h-72;
+  @apply md:py-36 py-20 px-10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -227,7 +221,6 @@ input:-webkit-autofill:hover {
   @apply text-gray-500 dark:text-gray-200;
 }
 
-
 #first_product::-webkit-outer-spin-button,
 #first_product::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -251,6 +244,7 @@ input:-webkit-autofill:hover {
 }
 
 .product-item {
+
   .view-button,
   .cart-button {
     transition: all 0.5s;
@@ -269,15 +263,15 @@ input:-webkit-autofill:hover {
 }
 
 .quickview {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.8);
 
 }
-
 
 .categories {
   li {
     position: relative;
     transition: all 0.5s ease;
+
     &::after {
       transition: all 0.5s ease;
       position: absolute;
@@ -288,12 +282,15 @@ input:-webkit-autofill:hover {
       height: 1px;
       @apply bg-red-400;
     }
-    &:hover{
+
+    &:hover {
       @apply text-red-400;
-      &::after{
+
+      &::after {
         right: 0;
       }
     }
+
     &.active {
       &::after {
         position: absolute;
@@ -304,65 +301,77 @@ input:-webkit-autofill:hover {
         height: 1px;
         @apply bg-red-400;
       }
+
       @apply text-red-400;
     }
   }
 
 }
 
-.productSlick{
-  .slick-prev{
+.productSlick {
+  .slick-prev {
     left: 10px;
     z-index: 1;
-    &::before{
+
+    &::before {
       content: '\f053';
       font-family: 'Font Awesome 6 Free';
       font-weight: 900;
     }
   }
-  .slick-next{
+
+  .slick-next {
     right: 26px;
-    &::before{
+
+    &::before {
       content: '\f054';
     }
   }
-  .slick-next,.slick-prev{
-    &::before{
+
+  .slick-next,
+  .slick-prev {
+    &::before {
       opacity: 1;
       font-family: 'Font Awesome 6 Free';
       font-weight: 900;
       @apply dark:bg-gray-900 bg-white text-gray-500 py-2 px-3;
     }
-    &.slick-disabled{
-      &::before{
+
+    &.slick-disabled {
+      &::before {
         opacity: 0.5 !important;
       }
     }
   }
-  .slick-slide > div {
+
+  .slick-slide>div {
     margin: 0 10px;
   }
+
   .slick-list {
     margin: 0 -10px;
   }
 }
 
-.offer-banner{
+.offer-banner {
   background: url('../images/home/black-friday-banner.png');
   background-attachment: fixed;
-  .textbox{
+
+  .textbox {
     animation: pulse 1s ease infinite;
   }
 }
 
 @keyframes pulse {
-  0%{
+  0% {
     transform: scale(1.1);
   }
-  50%{
+
+  50% {
     transform: scale(1);
   }
-  100%{
+
+  100% {
     transform: scale(1.1);
   }
 }
@@ -372,6 +381,7 @@ input:-webkit-autofill:hover {
   -webkit-appearance: none;
   margin: 0;
 }
+
 .no-arrows {
   /* Optional styles for a clean, non-styled appearance */
   appearance: textfield;
@@ -386,23 +396,78 @@ input:-webkit-autofill:hover {
 }
 
 @keyframes shake {
-  0% { transform: rotate(0); }
-  10% { transform: rotate(-10deg); }
-  20% { transform: rotate(10deg); }
-  30% { transform: rotate(-3deg); }
-  40% { transform: rotate(3deg); }
-  50% { transform: rotate(0); }
-  100% { transform: rotate(0); }
+  0% {
+    transform: rotate(0);
+  }
+
+  10% {
+    transform: rotate(-10deg);
+  }
+
+  20% {
+    transform: rotate(10deg);
+  }
+
+  30% {
+    transform: rotate(-3deg);
+  }
+
+  40% {
+    transform: rotate(3deg);
+  }
+
+  50% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
 }
 
 .Toastify__progress-bar--success {
   background: rgb(248, 113, 113) !important;
 }
 
-.Toastify__toast-body > div:last-child {
+.Toastify__toast-body>div:last-child {
   padding-left: 10px;
 }
 
-.cart-button{
+.cart-button {
   top: 360px;
+}
+
+.product-detail {
+  .images {
+    .image-box{
+      height: 70vh;
+      img{
+        transform-origin: center;
+      }
+    }
+    .slick-slider {
+      @apply md:grid md:grid-cols-5;
+      .slick-dots {
+        @apply pt-5 md:pt-0 md:col-span-1 md:order-1;
+        position: static;
+        margin-right: 10px;
+        li {
+          opacity: 0.5;
+          height: 70px;
+          width: 50px;
+          img{
+            width: 100%;
+            height: 100%;
+          }
+          &.slick-active{
+            opacity: 1;
+            border: 1px solid gray;
+          }
+        }
+      }
+      .slick-list{
+         @apply md:col-span-4 md:order-2;
+      }
+    }
+  }
 }

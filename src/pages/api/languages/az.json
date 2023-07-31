@@ -29,8 +29,12 @@
             "page_url": "/404"
         },
         {
-            "name": "'search' üçün number nəticə",
+            "name": "'[SEARCH]' üçün [NUMBER] nəticə",
             "page_url": "/search"
+        },
+        {
+            "name": "[PRODUCT]",
+            "page_url": "/shop/[product_detail]"
         }
     ],
     "header": {
@@ -146,9 +150,10 @@
     "home": {
         "title": "Əsas Səhifə",
         "slider": [
-            {
-                "title": "Səyahət Ayaqqabıları"
-            }
+            "Səyahət Çətirləri",
+            "Kiçik Pərənglər",
+            "Ultra Çətirlər",
+            "Elessi İdman Qalaktikası"
         ]
     },
     "shop": {

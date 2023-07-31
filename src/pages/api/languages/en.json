@@ -29,16 +29,12 @@
             "page_url": "/404"
         },
         {
-            "name": "number results for 'search'",
+            "name": "'[NUMBER]' results for '[SEARCH]'",
             "page_url": "/search"
         },
         {
-            "name": "Product",
-            "page_url": "/shop/[product_detail]"
-        },
-        {
-            "name": "Product",
-            "page_url": "/shop/[product_detail]"
+            "name": "[PRODUCT]",
+            "page_url":"/shop/[product_detail]"
         }
     ],
     "header": {
@@ -154,9 +150,10 @@
     "home": {
         "title": "Home",
         "slider": [
-            {
-                "title": "Travel Boots"
-            }
+            "Travel Boots",
+            "Tiny Paws",
+            "Ultra Boots",
+            "Elessi Sport Galaxy"
         ]
     },
     "shop": {

@@ -13,7 +13,6 @@ const Layout = (props) => {
   // custom hooks for store wishlist and cart in local storage
   useWishlist();
   useCart();
-
   const isDark = useSelector((state) => state.theme.theme.isDark)
   const router = useRouter()
   const number = props.result
@@ -22,13 +21,13 @@ const Layout = (props) => {
   const languages = useSelector((state) => state.language.languages);
   const pages = languages[selectedLanguage].pages;
   const searchTitle = languages[selectedLanguage].header.search
-  const filteredPages = pages.find(page => page.page_url === router.pathname);
-  const title = filteredPages.name.replace('search',search).replace('number',number)  
+  const filteredPages = pages.find(page => page.page_url === router.route);
+  const title = filteredPages?.name.replace('[SEARCH]',search).replace('[NUMBER]',number).replace('[PRODUCT]',props.product_title)
   useEffect(() => {
     document.title = (router.pathname==='/search'? `${searchTitle}: `:'')+ title + ' / Elessi';
   }, [title]);
   
-  return (
+return (
     <>
     <LiveChat/>
     <Header/>

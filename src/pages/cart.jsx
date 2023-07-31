@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartActions } from '@/redux/slices/cartSlice'
 import useCart from '@/hooks/useCart'
+import { getCurrency } from '@/util'
 
 export default function Cart() {
   const cart = useSelector((state) => state.cart.inCart)
@@ -13,6 +14,9 @@ export default function Cart() {
   const removeFromCart = (product)=>{
     dispatch(cartActions.removeFromCart(product))
   }
+  const selectedCurrency = useSelector((state) => state.currency.currency);
+  const constant = getCurrency(selectedCurrency)[0]*100;
+  const sign = getCurrency(selectedCurrency)[1]
 
   // custom hooks for store cart in local storage
   useCart();
@@ -40,9 +44,9 @@ export default function Cart() {
                         <td><button onClick={()=>removeFromCart(item)} title='Remove'><i className="fa-solid fa-xmark text-3xl"></i></button></td>
                         <td className='flex justify-center'><Link href={`/shop/${item.title}?id=${item.id}`}><img className='w-16' src={item.image} alt="product" /></Link></td>
                         <td><Link href={`/shop/${item.title}?id=${item.id}`}>{item.title}</Link></td>
-                        <td>{item.price}</td>
+                        <td>{sign}{Math.ceil(item.price*constant)/100}</td>
                         <td className=''><Counter product={item} /></td>
-                        <td>{item.quantity*item.price}</td>
+                        <td>{sign}{Math.ceil(item.quantity*item.price*constant)/100}</td>
                       </tr>
                     ))
                   }
@@ -62,7 +66,7 @@ export default function Cart() {
                       </div>
                       <div className="flex justify-between items-center py-5 space-x-3">
                         <h1>Price:</h1>
-                        <p>{item.price}</p>
+                        <p>{sign}{Math.ceil(item.price*constant)/100}</p>
                       </div>
                       <div className="flex justify-between items-center py-5 space-x-3">
                         <h1>Quantity:</h1>
@@ -70,13 +74,13 @@ export default function Cart() {
                       </div>
                       <div className="flex justify-between items-center pt-5 space-x-3">
                         <h1>Total:</h1>
-                        <p>{item.quantity*item.price}</p>
+                        <p>{sign}{Math.ceil(item.quantity*item.price*constant)/100}</p>
                       </div>
                     </div>
                   )})
                 }
               </div>
-              <div className='flex justify-end py-4'><span className='font-bold pe-1'>Total:</span>{Math.round(totalPrice*100)/100}</div>
+              <div className='flex justify-end py-4'><span className='font-bold pe-1'>Total:</span>{sign}{Math.ceil(totalPrice*constant)/100}</div>
             </div>
             :
             <div className='empty text-center py-12'>

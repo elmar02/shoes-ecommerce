@@ -56,7 +56,7 @@ const Item = ({ product }) => {
   const changeDisplay = () => {
     setDisplay('flex');
   }
-  const productUrl = "/shop/" + product.title.replace(/ /g, "-") + "?id=" + product.id
+  const productUrl = "/shop/" + product.title.replace(/[ \p{P}]/gu, "-") + "?id=" + product.id
 
   const likedIds = useSelector((state) => state.wishlist.likedIds)
   const isLiked = likedIds.includes(product.id)
@@ -79,7 +79,7 @@ const Item = ({ product }) => {
         <Link className='hover:text-red-400 text-lg transition-colors' href={productUrl}><h1>{product.title}</h1></Link>
         <p className='font-semibold'>{price + sign}</p>
       </div>
-      <QuickView display={display} setDisplay={setDisplay} />
+      <QuickView display={display} setDisplay={setDisplay} product={product}/>
     </div>
   )
 }
