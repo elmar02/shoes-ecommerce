@@ -116,10 +116,6 @@ input:-webkit-autofill {
   background-color: transparent !important;
 }
 
-input:-webkit-autofill:hover {
-  background-color: transparent !important;
-}
-
 .banner {
   background-image: url('../images/static/banner-bg.jpg');
 
@@ -145,22 +141,6 @@ input:-webkit-autofill:hover {
     &.slick-center {
       opacity: 1;
       filter: grayscale(0);
-    }
-  }
-}
-
-.workers {
-  .image-box {
-    &:hover {
-
-      .image,
-      .text-box {
-        opacity: 20%;
-      }
-
-      .socials {
-        display: block;
-      }
     }
   }
 }
@@ -231,12 +211,6 @@ input:-webkit-autofill:hover {
   a {
     overflow: hidden;
 
-    &:hover {
-      img {
-        scale: 1.1;
-      }
-    }
-
     img {
       transition: all 0.3s ease;
     }
@@ -248,17 +222,6 @@ input:-webkit-autofill:hover {
   .view-button,
   .cart-button {
     transition: all 0.5s;
-  }
-
-  &:hover {
-
-    .view-button,
-    .cart-button {
-      transition: all 0.5s;
-      transform: translateX(0px);
-      opacity: 1;
-      visibility: visible;
-    }
   }
 }
 
@@ -281,14 +244,6 @@ input:-webkit-autofill:hover {
       right: 100%;
       height: 1px;
       @apply bg-red-400;
-    }
-
-    &:hover {
-      @apply text-red-400;
-
-      &::after {
-        right: 0;
-      }
     }
 
     &.active {
@@ -439,34 +394,99 @@ input:-webkit-autofill:hover {
 
 .product-detail {
   .images {
-    .image-box{
+    .image-box {
       height: 70vh;
-      img{
+
+      img {
         transform-origin: center;
       }
     }
+
     .slick-slider {
       @apply md:grid md:grid-cols-5;
+
       .slick-dots {
         @apply pt-5 md:pt-0 md:col-span-1 md:order-1;
         position: static;
         margin-right: 10px;
+
         li {
           opacity: 0.5;
           height: 70px;
           width: 50px;
-          img{
+
+          img {
             width: 100%;
             height: 100%;
           }
-          &.slick-active{
+
+          &.slick-active {
             opacity: 1;
             border: 1px solid gray;
           }
         }
       }
-      .slick-list{
-         @apply md:col-span-4 md:order-2;
+
+      .slick-list {
+        @apply md:col-span-4 md:order-2;
+      }
+    }
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .categories {
+    li {
+      &:hover {
+        @apply text-red-400;
+
+        &::after {
+          right: 0;
+        }
+      }
+    }
+  }
+
+  .product-item {
+    &:hover {
+
+      .view-button,
+      .cart-button {
+        transition: all 0.5s;
+        transform: translateX(0px);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .shop-bar {
+    a {
+      &:hover {
+        img {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+
+  input:-webkit-autofill:hover {
+    background-color: transparent !important;
+  }
+
+
+  .workers {
+    .image-box {
+      &:hover {
+
+        .image,
+        .text-box {
+          opacity: 20%;
+        }
+
+        .socials {
+          display: block;
+        }
       }
     }
   }
