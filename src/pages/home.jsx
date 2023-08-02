@@ -50,7 +50,10 @@ export default function Home({ products }) {
     ]
   };
   const categories = [...new Set(products?.map(obj => obj.category))].sort();
-  const targetDate = new Date("2023-08-04T00:00:00");
+  const targetDate = new Date();
+  targetDate.setDate(targetDate.getDate() + (5 - targetDate.getDay() + 7) % 7);
+  targetDate.setHours(0, 0, 0, 0);
+
   const [trendy, setTrendy] = useState([]);
   const [sellers, setSellers] = useState([]);
   useEffect(() => {

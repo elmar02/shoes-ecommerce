@@ -26,7 +26,11 @@ const Timer = ({targetDate}) => {
     }
   );
 
+  const [isFriday,setIsFriday] = useState(false);
+
   useEffect(() => {
+    const today = new Date();
+    setIsFriday(today.getDate()===5)
     setTimeLeft(calculateTimeLeft)
   }, [])
 
@@ -38,7 +42,11 @@ const Timer = ({targetDate}) => {
     return () => clearTimeout(timer);
   });
   return (
-    <div className='bars flex space-x-5 text-center'>
+    <>
+    {
+      isFriday? 
+      <></>:
+      <div className='bars flex space-x-5 text-center'>
       <div className="bar bg-yellow-400 rounded-md text-black font-bold p-2">
         <div className="time">{timeLeft.days}</div>
         <h1 className="title text-xs">Days</h1>
@@ -56,6 +64,8 @@ const Timer = ({targetDate}) => {
         <h1 className="title text-xs">Seconds</h1>
       </div>
     </div>
+    }
+    </>
   )
 }
 

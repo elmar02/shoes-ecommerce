@@ -24,7 +24,11 @@ export default function Search({ products }) {
 
   useEffect(() => {
     if (q !== '') {
-      const filteredProducts = products?.filter((item) => item.title.toLowerCase().includes(q.toLowerCase()) || item.category.toLowerCase().includes(q.toLowerCase()))
+      const filteredProducts = products?.filter((item) => {
+        const words = item.title?.split(" ");
+        const cats = item.category?.split(" ");
+        return words?.find((word)=> word.toLowerCase().includes(q.toLowerCase()) && word[0].toLowerCase()===q[0].toLowerCase()) || cats?.find((cat)=> cat.toLowerCase().includes(q.toLowerCase()) && cat[0].toLowerCase()===q[0].toLowerCase());
+      })
       setSearchedProducts(filteredProducts)
     }
   }, [q])
